@@ -1,0 +1,52 @@
+<!--index.wxml-->
+
+<view class="container" style='padding: 15px;'>
+
+  <view style='background: white; border-radius: 5px; width: 100%'>
+    <view style='text-align: center; padding: 40px 0px 20px 0px; font-size: 24px;'>
+      <span>新志愿者信息</span>
+    </view>
+    <view style='padding: 10px 30px'>
+      <view style='position: relative;'>
+        <span class='title'>姓　　名: </span>
+        <input placeholder="请输入姓名" class='input-style'  bindchange="iptValueChange" data-name="form.name" value="{{nameValue}}" />
+        <span style="position: absolute; right: 0px; color: #d02020; right: 15px; top: 12px">*</span>
+      </view>
+      <view style='position: relative;'>
+        <span class='title'>联系电话: </span>
+        <input placeholder="请输入联系电话" type="number" class='input-style' bindchange="iptValueChange" data-name="form.phone" value="{{phoneValue}}" />
+        <span style="position: absolute; right: 0px; color: #d02020; right: 15px; top: 12px">*</span>
+      </view>
+        <!-- <span style="float:left; height:48px; line-height:48px; margin-right:10px;">出生日期: </span> -->
+       <!-- <picker   mode="date" bindchange='datePickerBindChange' data-name="form.birthDate" start='1900-1-1' end='2900-1-1'> 
+          <input placeholder="请选择出生日期" style='border: 2px solid #eee; border-radius: 5px; padding: 5px; margin-bottom: 10px'   value="{{dateValue}}" />
+      </picker> -->
+      <view style='position: relative;'>
+        <span class='title'>生　　日: </span>
+         <picker mode='multiSelector' style="height:45px;" bindchange='birthDayPickerBindChange' bindcolumnchange='birthDayPickerColumnBindChange' value='{{index}}' range='{{month}}'  range-key='name' data-name="form.birthDate"> 
+            <input placeholder="请选择生日" class='input-style' value="{{monthValue}}" disabled='true'>{{month[0][index[0]].name}}{{month[1][index[1]].name}}</input> 
+        </picker>
+         <span style="position: absolute; right: 0px; color: #d02020; right: 15px; top: 12px">*</span>
+      </view>
+      <radio-group bindchange="iptCalendarChange">
+       <span class='title'>历　　法: </span>
+        <view style='border: 0px solid #eee; border-radius: 5px; padding: 5px; margin-bottom: 10px'> 
+        <label style='margin-right: 10px' wx:for-items="{{ calendars }}"><radio value="{{ item.value }}" checked='{{ calendarSelected == item.value }}'/>{{ item.name }}　</label>
+        </view> 
+      </radio-group>
+      <radio-group bindchange="iptGenderChange">
+       <span class='title'>性　　别: </span>
+       <!-- <view style='border: 2px solid #eee; border-radius: 5px; padding: 5px; margin-bottom: 10px'> -->
+        <label style='margin-right: 10px' wx:for-items="{{ genders }}"><radio value="{{ item.value }}" checked='{{ genderSelected == item.value }}'/>{{ item.name }}　</label>
+       <!-- </view> -->
+      </radio-group>
+    </view>
+
+    <!-- <view style='padding: 10px 30px 30px 30px; text-align: center'>
+      <view style='background: #d02020; border-radius: 100px; width: 100%; margin: 0 auto; text-align: center; color: white; padding: 10px 0px;' bindtap='customizedSubmit'>提交</view>
+    </view> -->
+  <view style='padding: 10px 30px 30px 30px; text-align: center'>
+      <button style='background: #d02020; border-radius: 100px; width: 100%; margin: 0 auto; text-align: center; color: white; padding: 10px 0px;' open-type="getUserInfo" bindgetuserinfo="mySubmit">提交</button>
+    </view>
+  </view>
+</view>

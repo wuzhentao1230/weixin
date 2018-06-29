@@ -1,0 +1,30 @@
+/* pages/inputdata-ex/inputnevolunteer.wxss */
+.log-list {
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx;
+}
+.log-item {
+  margin: 10rpx;
+}
+.title{
+  float:left;
+   height:30px; 
+   line-height:30px; 
+   margin-right:10px;
+   flex:1
+}
+.input-style{
+  border: 1px solid #eee; 
+  border-radius: 5px;
+  padding: 5px; 
+  margin-bottom: 10px
+}
+/** 添加自定义button点击态样式类**/
+.other-button-hover {
+  background-color: blue;
+}
+
+page {
+  background: url(http://obxr1bykb.bkt.clouddn.com/customized_bg1.jpg) no-repeat #eee; height: 100%
+}

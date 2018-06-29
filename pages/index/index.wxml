@@ -1,0 +1,22 @@
+<!--pages/index/index.wxml-->
+   <!-- <view style='padding: 10px 30px 30px 30px; text-align: center'>
+      <view style='background: #d02020; border-radius: 100px; width: 100%; margin: 0 auto; text-align: center; color: white; padding: 10px 0px;' bindtap='usernavigateTo'>跳转按钮</view>
+  </view> -->
+  <view>
+  <span style="height:50px;"></span>
+  <span></span>
+<span >    本程序只获取用户公开的信息，如昵称、头像、openid等，不获取用户的隐私信息，请点击授权按钮进行授权</span>
+</view>
+<view style='padding: 10px 30px 30px 30px; text-align: center'>
+      <button bindgetuserinfo="myUserInfo" open-type="getUserInfo" style='background: #d02020; border-radius: 100px; width: 80%; margin: 0 auto; text-align: center; color: white; padding: 10px 0px;'>授权按钮</button>
+  </view>
+<!-- <view>
+<view><label>{{nickName}}</label></view>
+<image src="{{avatarUrl}}"></image>
+<view>
+<label>{{encryptedData}}</label>
+</view>
+</view> -->
+    
+
+

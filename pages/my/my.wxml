@@ -1,0 +1,8 @@
+<!--pages/my/my.wxml-->
+<view >
+<image src="{{avatarUrl}}" style="width:50px;height:50px;" mode='aspectFill'>个人头像</image>
+<label class='.title'>{{nickName}}</label>
+</view>
+<view >
+
+</view>

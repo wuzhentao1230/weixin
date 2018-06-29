@@ -1,0 +1,29 @@
+<!--pages/inputdata-ex/inputnevolunteer.wxml>
+<text>pages/inputdata-ex/inputnevolunteer.wxml</text-->
+<view class="container" style='padding: 15px;'>
+
+  <view style='background: white; border-radius: 5px; width: 100%'>
+    <view style='text-align: center; padding: 40px 0px 20px 0px; font-size: 24px;'>
+      <span>志愿者签到</span>
+    </view>
+    <view style='padding: 10px 30px'>
+      <view style='position: relative;'>
+        <span class='title'>姓　　名: </span>
+        <input placeholder="请输入姓名" class='input-style'  bindchange="iptValueChange" data-name="form.name" value="{{nameValue}}" />
+        <span style="position: absolute; right: 0px; color: #d02020; right: 15px; top: 12px">*</span>
+      </view>
+      <view style='position: relative;'>
+        <span class='title'>联系电话: </span>
+        <input placeholder="请输入联系电话" type="number" class='input-style' bindchange="iptValueChange" data-name="form.phone" value="{{phoneValue}}" />
+        <span style="position: absolute; right: 0px; color: #d02020; right: 15px; top: 12px">*</span>
+      </view>
+      <view style='position: relative;'>
+        <label class='title'>签到日期:  {{curtime}}</label>
+      </view>
+  </view>
+        
+  <view style='padding: 10px 30px 30px 30px; text-align: center'>
+      <button style='background: #d02020; border-radius: 100px; width: 100%; margin: 0 auto; text-align: center; color: white; padding: 10px 0px;' open-type="getUserInfo" bindgetuserinfo="mySubmit">签到</button>
+    </view>
+  </view>
+</view>

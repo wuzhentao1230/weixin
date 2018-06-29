@@ -1,0 +1,4 @@
+/* pages/index/index.wxss */
+page {
+  background: url(http://obxr1bykb.bkt.clouddn.com/customized_bg1.jpg) no-repeat #eee; height: 100%
+}
