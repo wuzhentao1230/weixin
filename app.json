@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/checkin/checkin",
     "pages/customized/customized",
     "pages/inputdata-ex/inputnevolunteer",
@@ -17,10 +18,10 @@
     "borderStyle": "white",
     "list": [
       {
-        "selectedIconPath": "images/index/addnew-selected.png",
-        "iconPath": "images/index/addnew.png",
-        "pagePath": "pages/customized/customized",
-        "text": "新增"
+        "selectedIconPath": "images/index/index-selected.png",
+        "iconPath": "images/index/index.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
       },
       {
         "selectedIconPath": "images/index/check-selected.png",

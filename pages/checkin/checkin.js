@@ -14,8 +14,9 @@ Page({
       avatarUrl: "",
       province: ""
     },
+    checkedPersions:"",
     curtime:0
-
+    
   },
 
   /**
@@ -33,10 +34,10 @@ Page({
   checkboxChange: function (e) {
     
     var that = this;
+    console.log("checkbox change ",e.detail.value);
     var Items = that.data.checkboxItems, values = e.detail.value;
     for (var i = 0, lenI = that.data.checkboxItems.length; i < lenI; ++i) {
       Items[i].checked = false;
-
       for (var j = 0, lenJ = values.length; j < lenJ; ++j) {
         if (Items[i].value == values[j]) {
           Items[i].checked = true;
@@ -53,7 +54,7 @@ Page({
     var checkUserList = [];
     
     var that = this;
-    //console.log("items ", that.data.checkboxItems )
+    console.log("items ", that.data.checkboxItems )
     for (var i = 0, lenI = that.data.checkboxItems.length; i < lenI; ++i) {
       var _obj = {};
       if (that.data.checkboxItems[i].checked == true){
@@ -85,7 +86,7 @@ Page({
             form: {}
           })
           console.log('xxx', that.data.form);
-          //that.nameReset()
+          that.onShow();
         } else {
           wx.showToast({
             title: res.data.message || '批量签到失败',
@@ -93,8 +94,8 @@ Page({
             image: '../../images/customized/icon-error.png',
             duration: 1500
           })
-
           setTimeout(function () { wx.hideToast() }, 2000)
+          that.onShow();
         }
       }
     })
@@ -110,7 +111,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
     var appInstance = getApp()
     //console.log("check in ", appInstance.globalData.userInfo)
     if (appInstance.globalData.userInfo == undefined || appInstance.globalData.userInfo == null) {
@@ -122,13 +122,6 @@ Page({
               avatarUrl: res.userInfo.avatarUrl,
               province: res.userInfo.province
             }
-          })
-          console.log("mydata ", userinfo);
-        },
-        fail: function () {
-          wx.showModal({
-            title: '无法获取人员表',
-            content: '新志愿者点击【新增】进行信息录入，点击【签到】进行签到；老志愿者点击【没有查到】，进行签到',
           })
         }
       })
@@ -156,28 +149,48 @@ Page({
       success: function (res) {
         // console.log("getuserlist ", res.data);
         var list = [];
+        var checkedlist = [];
         for (var i = 0; i < res.data.length; i++) {
           var _obj = {};
           _obj.name = res.data[i].name;
           _obj.value = res.data[i].id;
-          _obj.checked = false;
+          _obj.checked = res.data[i].check;
           list.push(_obj);
+          if(res.data[i].check == true)
+          {
+            checkedlist.push(res.data[i].name);
+          }
         }
+
         if (list.length == 0 || list[0].name == null || list[0].value == null) {
           wx.showModal({
             title: '无法获取人员表',
-            content: '新志愿者点击【新增】进行信息录入，然后点击【签到】进行签到；老志愿者点击【没有查到】，进行签到',
+            content: '根据下方蓝色提示进行签到',
           })
-          // wx.navigateTo({
-          //   url: '../inputdata-ex/inputnevolunteer'
-          // })
         }
         else {
           that.setData({
             checkboxItems: list
+          });
+        }
+        
+        if (checkedlist.length == 1) {
+          that.setData({
+            checkedPersons: checkedlist[0]
+          });
+        }
+        else if (checkedlist.length > 1) {
+          var strList = "";
+
+          strList = checkedlist[0];
+          for (var i = 1; i < checkedlist.length; i++) {
+            strList += '、';
+            strList += checkedlist[i];
+          }
+          that.setData({
+            checkedPersons: strList
           })
         }
-
       }
     })
   },

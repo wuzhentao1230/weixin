@@ -20,15 +20,24 @@
               </label>
           </checkbox-group>
         </view>
-         <view class="page__desc">
-         <navigator url='../inputdata-ex/inputnevolunteer' style='color:blue' class="weui-cell weui-check__label">没有查到？</navigator>
-         </view>
+      <view style='position: relative;'>
+        <span class='title' style="color:red">已签到人员:</span>
+      </view>
+      <view class="weui-cell weui-check__label">{{checkedPersons}}</view>
+      <span class="weui-cell weui-check__label"></span>
+     
+      <view style='position: relative;'>
+      <label class='title'>签到日期:  {{curtime}}</label>
+      </view>
     </view>
-  <view style='padding: 10px 30px;position: relative;' >
-  <label class='title'>签到日期:  {{curtime}}</label>
-  </view>
-  <view style='padding: 10px 30px 30px 30px; text-align: center'>
+    <view style='padding: 10px 30px 30px 30px; text-align: center'>
       <view style='background: #d02020; border-radius: 100px; width: 100%; margin: 0 auto; text-align: center; color: white; padding: 10px 0px;' bindtap='userCheckIn'>签到</view>
+    </view>
+    <view class="page__desc">
+    <navigator url='../customized/customized' style='padding:10px 30px;color:blue;text-decoration: underline;font-family: "黑体";'>我是新志愿者,点击这里录入!</navigator>
+    </view>
+    <view class="page__desc">
+      <navigator url='../inputdata-ex/inputnevolunteer' style='padding:10px 30px;color:blue;text-decoration: underline;font-family: "黑体";' >我是老志愿者，没有查到信息?</navigator>
     </view>
   </view>
 </view>
