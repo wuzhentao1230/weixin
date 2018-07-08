@@ -1,45 +1,72 @@
 // pages/index/index.js
+
+var config = require('../../config')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-     
-      nickName:"",
-      avatarUrl:"",
-      code:"",
-      encryptedData:"",
-      iv:"",
-      loginStatus:0
-  
+
+    nickName: "",
+    avatarUrl: "",
+    code: "",
+    encryptedData: "",
+    iv: "",
+    loginStatus: 0,
+    // -------我是数据分割线-----
+    xinzhan_des: "全国100多家，北京50多家。欢迎大家多多来奉粥，传递一份爱，温暖一个城",
+    shouxing_list_str: null
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
+    var that = this
+    wx.request({
+
+      url: config.service.shouxingUrl,
+      success: function(res) {
+        console.log(res);
+        var arr = res.data;
+        var str="";
+        for (var i in arr) {
+          console.log(i + "-----" + arr[i]);
+          str = str + arr[i] + ",  "
+        }
+        that.setData({
+          shouxing_list_str: str
+        });
+      
+      }
+
+    })
   },
-  
-  usernavigateTo:function(){
-   
+
+  usernavigateTo: function() {
+
     wx.navigateTo({
-      url:'../inputdata/inputdata',  //跳转页面的路径，可带参数 ？隔开，不同参数用 & 分隔；相对路径，不需要.wxml后缀
-      success:function() { console.log("success")},        //成功后的回调；
-      fail:function() { console.log("error")},          //失败后的回调；
-      complete:function() { }      //结束后的回调(成功，失败都会执行)
-      })
+      url: '../inputdata/inputdata', //跳转页面的路径，可带参数 ？隔开，不同参数用 & 分隔；相对路径，不需要.wxml后缀
+      success: function() {
+        console.log("success")
+      }, //成功后的回调；
+      fail: function() {
+        console.log("error")
+      }, //失败后的回调；
+      complete: function() {} //结束后的回调(成功，失败都会执行)
+    })
   },
-  myUserInfo:function(res){
+  myUserInfo: function(res) {
     var that = this;
     var openId = (wx.getStorageSync('openId'))
     console.log("openid ", openId)
-    if( openId )
-    {
+    if (openId) {
       console.log("11111")
       wx.getUserInfo({
-        success:function(res){
-          console.log("userinfo ",res)
+        success: function(res) {
+          console.log("userinfo ", res)
           // that.setData({
           //   myuserinfo:{
           //     nickName: res.userInfo.nickName,
@@ -47,32 +74,31 @@ Page({
           //   }
           // })
         },
-        fail:function(){
+        fail: function() {
           console.log("获取失败！")
         },
-        complete:function(){
+        complete: function() {
           console.log("获取用户信息完成！")
         }
       })
-    }
-    else{
-      
+    } else {
+
       // 登录
       wx.login({
-        success: function (res) {
+        success: function(res) {
           var code = res.code;
           if (code) {
             console.log('获取用户登录凭证：' + code);
             wx.getUserInfo({
-              withCredentials:true,
-              success:function(res_user){
-                console.log("getuserinfo",res_user)
-                  that.setData({
+              withCredentials: true,
+              success: function(res_user) {
+                console.log("getuserinfo", res_user)
+                that.setData({
                   nickName: res_user.userInfo.nickName,
                   avatarUrl: res_user.userInfo.avatarUrl,
-                  code:res.code,
-                  encryptedData:res_user.encryptedData,
-                  iv:res_user.iv
+                  code: res.code,
+                  encryptedData: res_user.encryptedData,
+                  iv: res_user.iv
                 });
                 // wx.request({
                 //   //后台接口地址
@@ -93,10 +119,10 @@ Page({
                 // })
 
               },
-              fail:function(){
+              fail: function() {
                 console.log("getuserinfo failed!")
               },
-              complete:function(){
+              complete: function() {
                 console.log("getuserinfo complete!")
               }
             })
@@ -160,7 +186,7 @@ Page({
       console.log("login end")
     }
   },
-  bindgetPhoneNumber:function(e){
+  bindgetPhoneNumber: function(e) {
     console.log(e.detail.errMsg)
     console.log(e.detail.iv)
     console.log(e.detail.encryptedData)
@@ -169,63 +195,63 @@ Page({
         title: '提示',
         showCancel: false,
         content: '未授权',
-        success: function (res) { }
+        success: function(res) {}
       })
     } else {
       wx.showModal({
         title: '提示',
         showCancel: false,
         content: '同意授权',
-        success: function (res) { }
+        success: function(res) {}
       })
-    }  
+    }
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-  
+  onReady: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-  
+  onShow: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
-  
+  onHide: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
-  
+  onUnload: function() {
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
-  
+  onPullDownRefresh: function() {
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-  
+  onReachBottom: function() {
+
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-  
+  onShareAppMessage: function() {
+
   }
 })
