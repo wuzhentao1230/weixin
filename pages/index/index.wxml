@@ -19,9 +19,10 @@
     </view>
     <!-- 今日寿星列表 -->
     <view class='shouxing_body'>
-      <text class='shouxing_text'>{{shouxing_list_str}} </text>
+      <text class='shouxing_body_text'>今天是{{curtime}}</text>
+      <text class='shouxing_text'>祝福魏公村心栈{{shouxing_list_str}}老师生日快乐，吉祥如意！愿我们心存善意和温暖，事事惜福感恩，做一个给别人带来幸福快乐的人！祝福人人天天好心情</text>
     </view>
-    <text class='shouxing_text_samll'>祝大家今天生日快乐！！ </text>
+    <!-- <text class='shouxing_text_samll'>祝大家今天生日快乐！！ </text> -->
 
 
   </view>

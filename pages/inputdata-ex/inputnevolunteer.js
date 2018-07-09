@@ -118,14 +118,18 @@ Page({
           })
           console.log('xxx', that.data.form);
         } else {
-          wx.showToast({
-            title: res.data.message || '签到失败',
-            icon: 'loading',
-            image: '../../images/customized/icon-error.png',
-            duration: 1500
-          })
+          // wx.showToast({
+          //   title: res.data.message || '签到失败',
+          //   icon: 'loading',
+          //   image: '../../images/customized/icon-error.png',
+          //   duration: 1500
+          // })
 
-          setTimeout(function () { wx.hideToast() }, 2000)
+          // setTimeout(function () { wx.hideToast() }, 2000)
+          wx.showModal({
+            title: '签到失败',
+            content: res.data.message,
+          })
           that.setData({
             form: {
             },

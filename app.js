@@ -20,35 +20,7 @@ App({
         // console.log("app userinfo ",res.userInfo)
       }
     })
-    // // 登录
-    // wx.login({
-    //   success: function (res) {
-    //     var code = res.code;
-    //     if (code) {
-    //       console.log('获取用户登录凭证：' + code);
-    //       wx.getUserInfo({
-    //         withCredentials: true,
-    //         success: function (res_user) {
-    //           console.log("getuserinfo", res_user)
-    //           //this.data.globaluserinfo = res_user.userInfo
-    //           // that.setData({
-    //           //   nickName: res_user.userInfo.nickName,
-    //           //   avatarUrl: res_user.userInfo.avatarUrl,
-    //           //   code: res.code,
-    //           //   encryptedData: res_user.encryptedData,
-    //           //   iv: res_user.iv
-    //           // });
-    //         },
-    //         fail:function(){
-    //           console.log("获取用户信息失败！")
-    //         }
-    //       })
-    //     } else {
-    //       console.log('获取用户登录态失败：' + res.errMsg);
-    //     }
-    //   }
-    // });
-
+    
     // 获取用户信息
     wx.getSetting({
       success: res => {

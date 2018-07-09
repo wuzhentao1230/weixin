@@ -15,7 +15,7 @@ Page({
       province: ""
     },
     checkedPersions:"",
-    curtime:0
+    curtime:""
     
   },
 
@@ -88,13 +88,17 @@ Page({
           console.log('xxx', that.data.form);
           that.onShow();
         } else {
-          wx.showToast({
-            title: res.data.message || '批量签到失败',
-            icon: 'loading',
-            image: '../../images/customized/icon-error.png',
-            duration: 1500
+          // wx.showToast({
+          //   title: res.data.message || '批量签到失败',
+          //   icon: 'loading',
+          //   image: '../../images/customized/icon-error.png',
+          //   duration: 1500
+          // })
+          // setTimeout(function () { wx.hideToast() }, 2000)
+          wx.showModal({
+            title: '批量签到失败',
+            content: res.data.message,
           })
-          setTimeout(function () { wx.hideToast() }, 2000)
           that.onShow();
         }
       }

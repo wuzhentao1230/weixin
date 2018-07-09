@@ -1,6 +1,7 @@
 // pages/index/index.js
 
 var config = require('../../config')
+var util = require('../../utils/util.js');
 Page({
 
   /**
@@ -16,7 +17,8 @@ Page({
     loginStatus: 0,
     // -------我是数据分割线-----
     xinzhan_des: "全国100多家，北京50多家。欢迎大家多多来奉粥，传递一份爱，温暖一个城",
-    shouxing_list_str: null
+    shouxing_list_str: null,
+    curtime:""
 
   },
 
@@ -24,7 +26,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    var that = this
+    var that = this;
+    var time = util.formatDate(new Date());
+    this.setData({
+      curtime: time
+    });   
     wx.request({
 
       url: config.service.shouxingUrl,
@@ -43,168 +49,6 @@ Page({
       }
 
     })
-  },
-
-  usernavigateTo: function() {
-
-    wx.navigateTo({
-      url: '../inputdata/inputdata', //跳转页面的路径，可带参数 ？隔开，不同参数用 & 分隔；相对路径，不需要.wxml后缀
-      success: function() {
-        console.log("success")
-      }, //成功后的回调；
-      fail: function() {
-        console.log("error")
-      }, //失败后的回调；
-      complete: function() {} //结束后的回调(成功，失败都会执行)
-    })
-  },
-  myUserInfo: function(res) {
-    var that = this;
-    var openId = (wx.getStorageSync('openId'))
-    console.log("openid ", openId)
-    if (openId) {
-      console.log("11111")
-      wx.getUserInfo({
-        success: function(res) {
-          console.log("userinfo ", res)
-          // that.setData({
-          //   myuserinfo:{
-          //     nickName: res.userInfo.nickName,
-          //     avatarUrl:res.userInfo.avatarUrl
-          //   }
-          // })
-        },
-        fail: function() {
-          console.log("获取失败！")
-        },
-        complete: function() {
-          console.log("获取用户信息完成！")
-        }
-      })
-    } else {
-
-      // 登录
-      wx.login({
-        success: function(res) {
-          var code = res.code;
-          if (code) {
-            console.log('获取用户登录凭证：' + code);
-            wx.getUserInfo({
-              withCredentials: true,
-              success: function(res_user) {
-                console.log("getuserinfo", res_user)
-                that.setData({
-                  nickName: res_user.userInfo.nickName,
-                  avatarUrl: res_user.userInfo.avatarUrl,
-                  code: res.code,
-                  encryptedData: res_user.encryptedData,
-                  iv: res_user.iv
-                });
-                // wx.request({
-                //   //后台接口地址
-                //   url: 'https://wgcxinzhan.cn/login',
-                //   data: {
-                //     code: res.code,
-                //     encryptedData: res_user.encryptedData,
-                //     iv: res_user.iv
-                //   },
-                //   method: 'GET',
-                //   header: {
-                //     'content-type': 'application/json'
-                //   },
-                //   success: function (res) {
-                //     wx.setStorageSync('openId', res.data.openId);
-
-                //   }
-                // })
-
-              },
-              fail: function() {
-                console.log("getuserinfo failed!")
-              },
-              complete: function() {
-                console.log("getuserinfo complete!")
-              }
-            })
-          } else {
-            console.log('获取用户登录态失败：' + res.errMsg);
-          }
-        }
-      });
-
-      // wx.login({
-      //   sucess: function (res) {
-      //     console.log(2)
-      //     console.log(res.code)
-      //     if(res.code){
-      //       wx.getUserInfo({
-      //         withCredentials: true,
-      //         success:function(res_user){
-      //           console.log("reget userinfo",res_user)
-      //           // that.setData({
-      //           //   nickName: res_user.userInfo.nickName,
-      //           //   avatarUrl: res_user.userInfo.avatarUrl,
-      //           //   code:res.code,
-      //           //   encryptedData:res_user.encryptedData,
-      //           //   iv:res_user.iv
-      //           // })
-      //           // wx.request({
-      //           //   //后台接口地址
-      //           //   url: 'https://....com/wx/login',
-      //           //   data: {
-      //           //     code: res.code,
-      //           //     encryptedData: res_user.encryptedData,
-      //           //     iv: res_user.iv
-      //           //   },
-      //           //   method: 'GET',
-      //           //   header: {
-      //           //     'content-type': 'application/json'
-      //           //   },
-      //           //   success: function (res) {
-      //           //     // this.globalData.userInfo = JSON.parse(res.data);
-      //           //     that.setData({
-      //           //       nickName: res.data.nickName,
-      //           //       avatarUrl: res.data.avatarUrl,
-      //           //     })
-      //           //     wx.setStorageSync('openId', res.data.openId);
-
-      //           //   }
-      //           // })
-      //           wx.setStorageSync('openId', "123456789");
-      //         },//success
-      //         fail:function(){
-      //           console.log("log in fail")
-      //           that.myUserReLogin();
-      //         },//fail
-      //         complete:function(){
-      //           console.log("log compelete")
-      //         }
-      //       })
-      //     }//end res.code
-      //   }//end login success
-      // })//end wx.login
-      console.log("login end")
-    }
-  },
-  bindgetPhoneNumber: function(e) {
-    console.log(e.detail.errMsg)
-    console.log(e.detail.iv)
-    console.log(e.detail.encryptedData)
-    if (e.detail.errMsg == 'getPhoneNumber:fail user deny') {
-      wx.showModal({
-        title: '提示',
-        showCancel: false,
-        content: '未授权',
-        success: function(res) {}
-      })
-    } else {
-      wx.showModal({
-        title: '提示',
-        showCancel: false,
-        content: '同意授权',
-        success: function(res) {}
-      })
-    }
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
