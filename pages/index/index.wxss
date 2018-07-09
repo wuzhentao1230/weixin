@@ -1,4 +1,60 @@
 /* pages/index/index.wxss */
+
 page {
-  background: url(http://obxr1bykb.bkt.clouddn.com/customized_bg1.jpg) no-repeat #eee; height: 100%
+  background: url(http://obxr1bykb.bkt.clouddn.com/customized_bg1.jpg) no-repeat #eee;
+  height: 100%;
+}
+
+.xinzhan_des {
+  margin: 20rpx;
+}
+
+.text-color {
+  color: black;
+  font-size: 13px;
+  margin: 20rpx 10rpx 20rpx 30rpx;
+}
+
+.title-color {
+  color: #14afc8;
+  font-size: 17px;
+}
+
+.xinzhan_logo {
+  width: 150rpx;
+  height: 150rpx;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+}
+
+.shouxing_title {
+  display: flex;
+}
+
+.shouxing_title_text {
+  color: #ee2b0b;
+  font-size: 17px;
+  margin-top: 60rpx;
+  margin-left: 120rpx;
+}
+
+.shouxing_body {
+  display: flex;
+  margin-left: 100rpx;
+  flex-direction: column;
+}
+
+.shouxing_text {
+  color: #c1c509;
+  font-size: 15px;
+  margin-top: 20rpx;
+}
+
+.shouxing_text_samll {
+  color: #ee2b0b;
+  font-size: 13px;
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction:row;
+  justify-content:center
 }

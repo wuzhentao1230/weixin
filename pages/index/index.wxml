@@ -1,22 +1,30 @@
 <!--pages/index/index.wxml-->
-   <!-- <view style='padding: 10px 30px 30px 30px; text-align: center'>
-      <view style='background: #d02020; border-radius: 100px; width: 100%; margin: 0 auto; text-align: center; color: white; padding: 10px 0px;' bindtap='usernavigateTo'>跳转按钮</view>
-  </view> -->
-  <view>
-  <span style="height:50px;"></span>
-  <span></span>
-<span >    本程序只获取用户公开的信息，如昵称、头像、openid等，不获取用户的隐私信息，请点击授权按钮进行授权</span>
-</view>
-<view style='padding: 10px 30px 30px 30px; text-align: center'>
-      <button bindgetuserinfo="myUserInfo" open-type="getUserInfo" style='background: #d02020; border-radius: 100px; width: 80%; margin: 0 auto; text-align: center; color: white; padding: 10px 0px;'>授权按钮</button>
+<view class="container" style='padding: 15px;'>
+  <!-- 心栈简介卡片部分 -->
+  <view style='background: white; border-radius: 5px; width: 100%'>
+    <text class='xinzhan_des title-color'>心栈简介 </text>
+    <view class='xinzhan_des text-color'>
+      {{ xinzhan_des }}
+    </view>
   </view>
-<!-- <view>
-<view><label>{{nickName}}</label></view>
-<image src="{{avatarUrl}}"></image>
-<view>
-<label>{{encryptedData}}</label>
+
+  <view class='xinzhan_des title-color' />
+
+  <!-- 寿星卡片部分 -->
+  <view style='background:white; border-radius: 5px; width: 100%; height: 100%;'>
+    <!-- 寿星卡片的醒目标题 -->
+    <view class='shouxing_title'>
+      <image class="xinzhan_logo" mode="aspectFit" src="./img/xinzhan_logo.jpg"></image>
+      <text class='shouxing_title_text'>今日寿星 </text>
+    </view>
+    <!-- 今日寿星列表 -->
+    <view class='shouxing_body'>
+      <text class='shouxing_text'>{{shouxing_list_str}} </text>
+    </view>
+    <text class='shouxing_text_samll'>祝大家今天生日快乐！！ </text>
+
+
+  </view>
+
+
 </view>
-</view> -->
-    
-
-
