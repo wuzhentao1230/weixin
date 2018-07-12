@@ -1,11 +1,3 @@
-.screen {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-}
-
 .show {
     display: block;
 }
@@ -13,38 +5,8 @@
     display: none;
 }
 
-.password-view {
-    width: 100%;
-    height: 100%;
-}
-.center {
-    position: absolute;
-    top: 20%;
-}
-.access-title {
-    font-size: 42rpx;
-    height: 56rpx;
-    line-height: 56rpx;
-    width: 100%;
-    padding: 30rpx 100rpx;
-}
-.password-input {
-    width: 75%;
-    height: 56rpx;
-    border-bottom: 2rpx solid #1AAD19;
-    padding: 10rpx 0;
-    margin: 10rpx 100rpx 30rpx 100rpx;
-} 
-.ver-btn {
-    margin: 50rpx 200rpx;
-    background-color: #1AAD19;
-    color:#FFFFFF;
-}
 
-/* 输入当天分工信息 */
-.input-view {
-    
-}
+/* 输入分工信息 */
 .thank {
     width: 100%;
     color: #1AAD19;
@@ -56,44 +18,48 @@
     color:rgba(0,0,0,0.7);
     padding-left: 20rpx;
 }
-.input-contain {
-    
-}
 .input-one {
     display: block;
     width: 100%;
     padding-left: 20rpx;
     clear:both;
+    position: relative;
 }
 .input-title {
     display: inline-block;
-   
     width: 200rpx;
     line-height: 90rpx;
     text-align: right;
     padding-right: 10rpx;
 }
 .input-content {
+    /* display: inline-block;
+    border-bottom: 1rpx solid #1AAD19; 
+    position:relative;
+    top: 10rpx; */
     display: inline-block;
     border-bottom: 1rpx solid #1AAD19; 
     position:relative;
-    top: 10rpx;
+    top: 12rpx;
+    width: calc(100% - 300rpx);
 }
 .half {
     width: 200rpx;
 }
 .input-content-special {
     display: inline-block;
-    width:calc(100% - 220rpx);
-  
+    width:calc(100% - 270rpx);
+    float:left;
+    line-height:30px;
+}
+.line-height {
+    line-height: 45px;
 }
 .input-sapn{
   display: inline-block;
   width:30rpx;
 }
+
 .submit-btn {
     margin: 50rpx 200rpx;
-    background-color: #1AAD19;
-    color:#FFFFFF;
 }
-

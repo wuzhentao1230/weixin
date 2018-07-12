@@ -1,0 +1,9 @@
+<view class="screen">
+    <view class="password-view" id="password-view">
+        <view class="center">
+            <view class="access-title">本页面仅供心栈日负责人访问</view>
+            <input class="password-input" bindinput="inputPwd" password type="text" placeholder="请输入访问密码" />          
+            <button class="weui-btn ver-btn" type="primary" bindtap="verfityPwd"> 进入</button>
+        </view>
+    </view>
+</view>

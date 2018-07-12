@@ -1,31 +1,42 @@
 <!--pages/index/index.wxml-->
-<view class="container" style='padding: 15px;'>
-  <!-- 心栈简介卡片部分 -->
-  <view style='background: white; border-radius: 5px; width: 100%'>
-    <text class='xinzhan_des title-color'>心栈简介 </text>
-    <view class='xinzhan_des text-color'>
-      {{ xinzhan_des }}
+<view >
+    <!-- 增加swiper，但是因为swiper不能读取本地图片，等找到解决方案再上 -->
+    <!-- <view class="page-section page-section-spacing swiper">
+        <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{background}}" wx:key="*this">
+          <swiper-item>
+            <view class="swiper-item {{item}}"></view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view> -->
+
+    <!-- 心栈logo部分 -->
+    <!-- <view class="logo-module">
+        <image class="foundation" mode="{{modeFound}}" src="{{src_found}}"></image>  -->
+        <!-- <image class="foundation" mode="{{modewgc}}" src="{{src_wgc}}"></image> -->
+    <!-- </view>  -->
+
+    <!-- 心栈简介卡片部分 -->
+    <view class="wgc-introduce">
+        <text class='xinzhan_des title-color'>魏公村心栈简介:</text>
+        <view class='xinzhan_des text-color'>
+            仁爱心栈魏公村栈启动于2014年11月1日第二个重阳节，是北京市仁爱慈善基金会仁爱心栈项目北京第7家全国第13家心栈，心栈启动的目的是为公众搭建一个善行实践的平台，通过365天持续不断的为路人奉粥，传递爱心，让无门槛的慈善，人人可及。<span class="more" bindtap="lookMore">点击查看更多>></span>
+        </view>
     </view>
-  </view>
 
-  <view class='xinzhan_des title-color' />
-
-  <!-- 寿星卡片部分 -->
-  <view style='background:white; border-radius: 5px; width: 100%; height: 100%;'>
-    <!-- 寿星卡片的醒目标题 -->
-    <view class='shouxing_title'>
-      <image class="xinzhan_logo" mode="aspectFit" src="./img/xinzhan_logo.jpg"></image>
-      <text class='shouxing_title_text'>今日寿星 </text>
-    </view>
-    <!-- 今日寿星列表 -->
-    <view class='shouxing_body'>
-      <text class='shouxing_body_text'>今天是{{curtime}}</text>
-      <text class='shouxing_text'>祝福魏公村心栈{{shouxing_list_str}}老师生日快乐，吉祥如意！愿我们心存善意和温暖，事事惜福感恩，做一个给别人带来幸福快乐的人！祝福人人天天好心情</text>
-    </view>
-    <!-- <text class='shouxing_text_samll'>祝大家今天生日快乐！！ </text> -->
-
-
-  </view>
-
-
+    <!-- 寿星背景图片部分 -->
+    <!-- <image class="shouxing_img" mode="{{modeShouxing}}" src="{{src_shouxing}}"></image> -->
+    <!-- 寿星卡片部分 -->
+    <view class="shouxing_module">
+        <view class='shouxing_title'>
+            <text class='shouxing_title_text'>今日寿星 </text>
+        </view>
+        <view class='shouxing_body'>
+            <text class='shouxing_body_text'>今天是 <text class="bold">{{curtime}}</text> ，</text>
+            <text class='shouxing_text'>祝福魏公村心栈 <text class="bold">{{shouxing_list_str}}</text> 老师生日快乐，吉祥如意！愿我们心存善意和温暖，事事惜福感恩，做一个给别人带来幸福快乐的人！祝您天天好心情！！！</text>
+        </view>
+    </view> 
+    <image class="welcome" mode="{{mode}}" src="{{src}}"></image>
 </view>
+        

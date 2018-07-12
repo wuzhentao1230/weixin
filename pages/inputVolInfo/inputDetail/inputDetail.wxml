@@ -1,0 +1,76 @@
+<view class="screen">
+    <view class="input-view {{showInput==true?'show':'hide'}}">
+        <view class="thank">感恩您的承担与付出!</view>
+        <view class="prompt">【多个人姓名之间以空格分开】</view>
+         <view class="input-contain">
+            <view class="input-one">
+                <view class="input-title">日负责人：</view>
+                <input class="input-content" id="dailyLeader" auto-focus placeholder=""  bindchange="iptValueChange" data-name="form.dailyLeader" value='{{DayInfo.dailyLeader}}'></input>
+            </view>
+            <view class="input-one">
+                <view class="input-title">熬粥：</view>
+                <input class="input-content" placeholder="" bindchange="iptValueChange" data-name="form.cooker" value='{{DayInfo.cooker}}'/>
+            </view>
+            <view class="input-one">
+                <view class="input-title">签到引领：</view>
+                <input class="input-content" placeholder="" bindchange="iptValueChange" data-name="form.checker" value='{{DayInfo.checker}}'/>
+            </view>
+            <view class="input-one">
+                <view class="input-title">前行：</view>
+                <input class="input-content" placeholder="" bindchange="iptValueChange" data-name="form.forwarder" value='{{DayInfo.forwarder}}'/>
+            </view>
+            <view class="input-one">
+                <view class="input-title">总杯数：</view>
+                <input class="input-content half" type="number" placeholder="" bindchange="iptValueChange" data-name="form.totalcups" value='{{DayInfo.totalcups}}'/>
+                <view class="input-sapn">杯</view>
+            </view>
+            <view class="input-one">
+                <view class="input-title" style='float:left;'>总人数：</view>
+                <view class="input-content-special line-height">{{numPeople}} 人</view>
+            </view>
+            <view class="input-one">
+                <view class="input-title" style='float:left;'>新人数：</view>
+                <view class="input-content-special">{{newPeople}} </view>
+            </view>
+            <view class="input-one">
+                <view class="input-title" style='float:left;'>摄影：</view>
+                <input class="input-content" placeholder="" bindchange="iptValueChange" data-name="form.photographer" value='{{DayInfo.photographer}}'/>
+            </view>
+            <view class="input-one">
+                <view class="input-title">日志：</view>
+                <input class="input-content" placeholder="" bindchange="iptValueChange" data-name="form.dailylog" value='{{DayInfo.dailylog}}'/>
+            </view>
+            <view class="input-one">
+                <view class="input-title">文宣：</view>
+                <input class="input-content" placeholder="" bindchange="iptValueChange" data-name="form.propaganda" value='{{DayInfo.propaganda}}'/>
+            </view>
+            <view class="input-one">
+                <view class="input-title">结行：</view>
+                <input class="input-content" placeholder="" bindchange="iptValueChange" data-name="form.summingup" value='{{DayInfo.summingup}}'/>
+            </view>
+            <view class="input-one">
+                <view class="input-title">后勤：</view>
+                <input class="input-content" placeholder="" bindchange="iptValueChange" data-name="form.logistics" value='{{DayInfo.logistics}}'/>
+            </view>
+            <view class="input-one">
+                <view class="input-title">粥车粥桶：</view>
+                <input class="input-content" placeholder="" bindchange="iptValueChange" data-name="form.cleaner" value='{{DayInfo.cleaner}}'/>
+            </view>
+              <view class="input-one">
+                <view class="input-title">环保：</view>
+                <input class="input-content" placeholder="" bindchange="iptValueChange" data-name="form.environment" value='{{DayInfo.environment}}'/>
+            </view>
+            <view class="input-one">
+                <view class="input-title" style='float:left;'>当日签到：</view>
+                <view class='input-content-special'>{{strList}}</view>
+            </view>
+        </view> 
+        <button class="weui-btn submit-btn" type="primary" bindtap="submitInfo"> 提交 </button>
+    </view>
+    <view class="{{showCopy==true?'show':'hide'}}">
+        <view wx:for="{{detailLog}}">
+            {{item}}
+        </view>
+        <button class="weui-btn submit-btn" type="primary" bindtap="CopyInfo"> 一键复制 </button>
+    </view>
+</view>

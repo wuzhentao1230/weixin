@@ -5,15 +5,75 @@ page {
   height: 100%;
 }
 
-.xinzhan_des {
-  margin: 20rpx;
+/* logo部分 */
+.logo-module {
+    background: #f6f8f9; 
+    border-radius: 5px; 
+    margin: 20rpx;
+}
+.foundation {
+    margin-left:15px;
 }
 
-.text-color {
-  color: black;
-  font-size: 13px;
-  margin: 20rpx 10rpx 20rpx 30rpx;
+/* 心栈介绍 */
+.wgc-introduce {
+    background: #f6f8f9; 
+    border-radius: 5px; 
+    margin: 20rpx;
+    padding: 20rpx;
 }
+.title-color {
+    color: #000000;
+    font-size: 17px;
+    font-weight: bold;
+}
+.text-color {
+    text-indent: 60rpx;
+    color: #000000;
+    /* color: #8d8d8d; */
+    font-size: 14px;
+}
+.bold {
+    font-weight: bold;
+}
+.more {
+    color: #8d8d8d;
+    font-size: 14px;
+}
+
+/* 寿星 */
+.shouxing_module {
+    background: #f6f8f9; 
+    border-radius: 5px; 
+    margin: 20rpx;
+    padding: 20rpx; 
+}
+.shouxing_title {
+    width: 100%;
+    text-align: center;
+}
+.shouxing_title_text {
+    color: #000000;
+    font-size: 17px;
+    font-weight: bold;
+}
+.shouxing_body {
+    text-indent: 60rpx;
+    color: #000000;
+    font-size: 14px;
+}
+.red {
+    color: red;
+}
+
+
+.welcome {
+    width: 100%;
+    position:fixed;
+    bottom:0;
+}
+
+/* 
 
 .title-color {
   color: #14afc8;
@@ -27,22 +87,7 @@ page {
   margin-top: 20rpx;
 }
 
-.shouxing_title {
-  display: flex;
-}
 
-.shouxing_title_text {
-  color: #ee2b0b;
-  font-size: 17px;
-  margin-top: 60rpx;
-  margin-left: 120rpx;
-}
-
-.shouxing_body {
-  display: flex;
-  margin-left: 100rpx;
-  flex-direction: column;
-}
 
 .shouxing_text {
   color: #c1c509;
@@ -57,4 +102,4 @@ page {
   display: flex;
   flex-direction:row;
   justify-content:center
-}
+} */

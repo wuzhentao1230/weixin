@@ -1,0 +1,32 @@
+page {
+    background-image:url('http://obxr1bykb.bkt.clouddn.com/customized_bg1.jpg');
+    background-attachment:fixed;
+    background-position:100% 100%;
+    background-repeat:no-repeat;
+}
+
+.module {
+    background: #f6f8f9; 
+    border-radius: 5px; 
+    margin: 20rpx;
+    padding: 30rpx;
+}
+.title-color {
+    color: #000000;
+    font-size: 17px;
+    font-weight: bold;
+}
+.text-color {
+    text-indent: 60rpx;
+    color: #000000;
+    font-size: 14px;
+    line-height: 14px;
+}
+.last-module {
+    margin-bottom: 150px;
+}
+.welcome {
+    width: 100%;
+    position:fixed;
+    bottom:0;
+}
