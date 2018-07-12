@@ -1,10 +1,12 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/checkin/checkin",
+    "pages/index/index",
+    "pages/index/introduce/introduce",
+    "pages/inputVolInfo/inputPwd",
+    "pages/inputVolInfo/inputDetail/inputDetail",
     "pages/customized/customized",
-    "pages/inputdata-ex/inputnevolunteer",
-    "pages/inputInfo/info"
+    "pages/inputdata-ex/inputnevolunteer"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -32,7 +34,7 @@
       {
         "selectedIconPath": "images/index/dailylog-selected.png",
         "iconPath": "images/index/dailylog.png",
-        "pagePath": "pages/inputInfo/info",
+        "pagePath": "pages/inputVolInfo/inputPwd",
         "text": "奉粥日志"
       }
     ]
