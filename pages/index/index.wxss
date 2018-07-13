@@ -1,14 +1,39 @@
 /* pages/index/index.wxss */
 
 page {
-  background: url(http://obxr1bykb.bkt.clouddn.com/customized_bg1.jpg) no-repeat #eee;
-  height: 100%;
+    background: url(https://upload-images.jianshu.io/upload_images/9674600-608c7dda6e198622.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-position:100% 100%;
+}
+
+.show {
+    display: block;
+}
+.hide {
+    display: none;
+}
+.page-section-spacing {
+    box-sizing:border-box;
+    margin:20rpx 40rpx 0 40rpx;
+}
+swiper {
+    width: 100%;
+    height: 400rpx;
+    border-radius: 5px; 
+}
+.slide-image {
+    width: 100%;
+}
+image {
+    height: 100%;
 }
 
 /* logo部分 */
 .logo-module {
     background: #f6f8f9; 
-    border-radius: 5px; 
+    border-radius:5px;
     margin: 20rpx;
 }
 .foundation {
@@ -17,10 +42,11 @@ page {
 
 /* 心栈介绍 */
 .wgc-introduce {
-    background: #f6f8f9; 
-    border-radius: 5px; 
-    margin: 20rpx;
+    background: #ffffff; 
+    border-radius: 10px; 
+    margin: 0 30rpx 30rpx 30rpx;
     padding: 20rpx;
+    opacity:0.8;
 }
 .title-color {
     color: #000000;
@@ -43,10 +69,11 @@ page {
 
 /* 寿星 */
 .shouxing_module {
-    background: #f6f8f9; 
-    border-radius: 5px; 
-    margin: 20rpx;
+    background: #ffffff; 
+    border-radius: 10px; 
+    margin: 30rpx;
     padding: 20rpx; 
+    opacity: 0.8;
 }
 .shouxing_title {
     width: 100%;

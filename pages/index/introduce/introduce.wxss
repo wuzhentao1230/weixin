@@ -1,8 +1,9 @@
 page {
-    background-image:url('http://obxr1bykb.bkt.clouddn.com/customized_bg1.jpg');
+    background-image:url('https://upload-images.jianshu.io/upload_images/9674600-608c7dda6e198622.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240');
     background-attachment:fixed;
     background-position:100% 100%;
     background-repeat:no-repeat;
+    background-size: cover;
 }
 
 .module {
@@ -10,6 +11,7 @@ page {
     border-radius: 5px; 
     margin: 20rpx;
     padding: 30rpx;
+    opacity:0.8;
 }
 .title-color {
     color: #000000;

@@ -10,13 +10,13 @@ Page({
      */
     data: {
         // swiper
-        // indicatorDots: true,        // 是否显示面板指示点
-        // autoplay: true,             // 自动播放
-        // circular: true,             // 是否采用衔接滑动
-        // vertical: false,            // 滑动是否为纵向
-        // interval: 1000,             // 自动切换时间间隔
-        // duration: 500,              // 滑动动画时长
-        // background: ['swiper1', 'swiper2', 'swiper3', 'swiper4'],
+        indicatorDots: true,        // 是否显示面板指示点
+        autoplay: true,             // 自动播放
+        circular: true,             // 是否采用衔接滑动
+        vertical: false,            // 滑动是否为纵向
+        interval: 3000,             // 自动切换时间间隔
+        duration: 1000,              // 滑动动画时长
+        background: ['https://upload-images.jianshu.io/upload_images/9674600-1e1089e3e41928ee.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/700', 'https://upload-images.jianshu.io/upload_images/9674600-fa38b46182f961f3.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/700', 'https://upload-images.jianshu.io/upload_images/9674600-6254921ee5b54d77.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/700'],
         
         // logo部分 
         modeFound:'widthFix',
@@ -31,6 +31,7 @@ Page({
         iv: "",
         loginStatus: 0,
 
+        isHaveShouXing: false,
         modeShouxing: 'widthFix',
         src_shouxing: './img/birth_bg.jpg',
         shouxing_list_str: null,
@@ -57,6 +58,11 @@ Page({
             success: function(res) {
                 console.log(res);
                 var arr = res.data;
+                if(res.data.length != 0) {
+                    that.setData({
+                        isHaveShouXing: true
+                    });
+                }
                 var str="";
                 for (var i in arr) {
                     //console.log(i + "-----" + arr[i]);
