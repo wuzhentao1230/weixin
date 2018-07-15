@@ -115,33 +115,40 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var appInstance = getApp()
-    //console.log("check in ", appInstance.globalData.userInfo)
-    if (appInstance.globalData.userInfo == undefined || appInstance.globalData.userInfo == null) {
-      wx.getUserInfo({
-        success: function (res) {
-          that.setData({
-            userinfo: {
-              nickName: res.userInfo.nickName,
-              avatarUrl: res.userInfo.avatarUrl,
-              province: res.userInfo.province
-            }
-          })
-        }
-      })
-
-    }
-    else {
-      var that = this;
-      that.setData({
-        userinfo: {
-          nickName: appInstance.globalData.userInfo.nickName,
-          avatarUrl: appInstance.globalData.userInfo.avatarUrl,
-          province: appInstance.globalData.userInfo.province
-        }
-      })
-    }
     var that = this;
+    //console.log("userinfo ",that.data.userinfo)
+    if(that.data.userinfo == undefined 
+    || that.data.userinfo == null
+    ||that.data.userinfo.nickName == "")
+    {
+      var appInstance = getApp()
+      //console.log("check in ", appInstance.globalData.userInfo)
+      if (appInstance.globalData.userInfo == undefined 
+      || appInstance.globalData.userInfo == null) 
+      {
+        wx.getUserInfo({
+          success: function (res) {
+            that.setData({
+              userinfo: {
+                nickName: res.userInfo.nickName,
+                avatarUrl: res.userInfo.avatarUrl,
+                province: res.userInfo.province
+              }
+            })
+          }
+        })
+      }
+      else {
+        that.setData({
+          userinfo: {
+            nickName: appInstance.globalData.userInfo.nickName,
+            avatarUrl: appInstance.globalData.userInfo.avatarUrl,
+            province: appInstance.globalData.userInfo.province
+          }
+        })
+      }
+    }
+    
     var params = that.data.userinfo;
     wx.request({
       url: 'https://wgcxinzhan.cn/getUserList',
@@ -158,14 +165,14 @@ Page({
           var _obj = {};
           _obj.name = res.data[i].name;
           _obj.value = res.data[i].id;
-          _obj.checked = res.data[i].check;
+          _obj.checked = (res.data[i].check == 1)?true:false;
           list.push(_obj);
-          if(res.data[i].check == true)
+          if(res.data[i].check == 1)
           {
             checkedlist.push(res.data[i].name);
           }
         }
-
+        //console.log("obj is ",_obj)
         if (list.length == 0 || list[0].name == null || list[0].value == null) {
           wx.showModal({
             title: '无法获取人员表',

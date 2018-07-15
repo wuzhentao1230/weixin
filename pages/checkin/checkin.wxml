@@ -12,7 +12,7 @@
         <view class="weui-cells weui-cells_after-title">
           <checkbox-group bindchange="checkboxChange">
               <label class="weui-cell weui-check__label" wx:for="{{checkboxItems}}" wx:key="value">
-                  <checkbox class="weui-check" value="{{item.value}}" checked="{{item.checked}}"/>
+                  <checkbox  value="{{item.value}}" checked="{{item.checked}}"/>
 
                   <view class="weui-cell__hd weui-check__hd_in-checkbox">
                   </view>
