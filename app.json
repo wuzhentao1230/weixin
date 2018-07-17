@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/checkin/checkin",
     "pages/index/index",
+    "pages/checkin/checkin",
     "pages/index/introduce/introduce",
     "pages/inputVolInfo/inputPwd",
     "pages/inputVolInfo/inputDetail/inputDetail",

@@ -9,7 +9,7 @@
 /* 输入分工信息 */
 .thank {
     width: 100%;
-    color: #1AAD19;
+    color: #F37D1B;
     font-size: 50rpx;
     padding: 30rpx 160rpx;
 }
@@ -38,7 +38,7 @@
     position:relative;
     top: 10rpx; */
     display: inline-block;
-    border-bottom: 1rpx solid #1AAD19; 
+    border-bottom: 1rpx solid #F37D1B; 
     position:relative;
     top: 12rpx;
     width: calc(100% - 300rpx);
@@ -61,5 +61,7 @@
 }
 
 .submit-btn {
-    margin: 50rpx 200rpx;
+    margin: 100rpx 200rpx;
+    background-color: #F37D1B;
+    color:#FFFFFF;
 }

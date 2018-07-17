@@ -65,12 +65,12 @@
                 <view class='input-content-special'>{{strList}}</view>
             </view>
         </view> 
-        <button class="weui-btn submit-btn" type="primary" bindtap="submitInfo"> 提交 </button>
+        <button class="weui-btn submit-btn" bindtap="submitInfo"> 提交 </button>
     </view>
     <view class="{{showCopy==true?'show':'hide'}}">
         <view wx:for="{{detailLog}}">
             {{item}}
         </view>
-        <button class="weui-btn submit-btn" type="primary" bindtap="CopyInfo"> 一键复制 </button>
+        <button class="weui-btn submit-btn" bindtap="CopyInfo"> 一键复制 </button>
     </view>
 </view>
