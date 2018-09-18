@@ -7,6 +7,7 @@ var pageObject = {
         checkList: [],              // 获取当日志愿者名单列表请求response
         numPeople: 0,               // 总人数
         newPeople: "0人",           // 新人数
+        newPeopleDetail:[],         //新人详细信息
         detailLog: [],              // 提交的奉粥日志文本，用于复制
 
         form: {
@@ -259,8 +260,7 @@ var pageObject = {
                 strPorridge: item
             });
         }
-        console.log(strlist);
-
+        //console.log(strlist);
         that.setData({
             detailLog: strlist
         })

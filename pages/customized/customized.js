@@ -16,6 +16,7 @@ Page({
     nameValue:"",
     phoneValue:"",
     monthValue:"",
+    dateValue:"",
     index:[0,0],
     genderSelected: 0,
     calendarSelected: 0,
@@ -51,6 +52,26 @@ Page({
       index: e.detail.value
     })
   },
+  birthDayPickerColumnBindChange: function (e) {
+    //console.log("birthdayPickercolumn ",e.detail.column)
+    if (e.detail.column == 0) {
+      //console.log('月份发生变化，携带值为', e.detail.value)
+      var days = birthDayObj.getDaysById(e.detail.value);
+      //console.log('选择的月份长度 ', days.length);
+      this.setData({
+        month: [birthDayObj.monthsList, days]
+      })
+    }
+  },
+  datePickerBindChange:function(e){
+    var that = this;
+    var fieldName = e.currentTarget.dataset['name'];
+    that.setData({
+      [fieldName]:e.detail.value,
+      dateValue:e.detail.value
+    })
+  
+  },
   iptCalendarChange: function (e) {
     var key = 'form.calendar'
     this.setData({
@@ -65,18 +86,7 @@ Page({
       genderSelected: e.detail.value
     })
   },
-  birthDayPickerColumnBindChange:function(e)
-  {
-    //console.log("birthdayPickercolumn ",e.detail.column)
-    if (e.detail.column == 0) {
-      //console.log('月份发生变化，携带值为', e.detail.value)
-      var days = birthDayObj.getDaysById(e.detail.value);
-      //console.log('选择的月份长度 ', days.length);
-      this.setData({
-        month: [birthDayObj.monthsList, days]
-      })
-    }
-  },
+ 
   iptValueChange: function (e) {
     var that = this;
     var fieldName = e.currentTarget.dataset['name'];
@@ -219,7 +229,8 @@ Page({
           })
           setTimeout(function () { wx.hideToast() }, 2000)
           that.setData({
-            form: {}
+            form: {},
+            dateValue:""
           })
           //console.log('xxx', that.data.form);
           //that.nameReset()

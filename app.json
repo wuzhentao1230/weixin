@@ -6,7 +6,8 @@
     "pages/inputVolInfo/inputPwd",
     "pages/inputVolInfo/inputDetail/inputDetail",
     "pages/customized/customized",
-    "pages/inputdata-ex/inputnevolunteer"
+    "pages/inputdata-ex/inputnevolunteer",
+    "pages/getNewDetail/getNewDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

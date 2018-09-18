@@ -1,0 +1,16 @@
+<view class="screen">
+  <view class="bold">
+  新志愿者列表：
+  </view>
+  <view wx:for="{{strNewDetailInfo}}">
+      {{item}}
+  </view>
+  <view class="bold">
+  今日寿星名单：
+  </view>
+  <text>{{shouxing_list_str}}</text>
+  
+  <view>
+  <button class="weui-btn submit-btn" bindtap="CopyInfo"> 复制寿星名单 </button>
+  </view> 
+</view>
