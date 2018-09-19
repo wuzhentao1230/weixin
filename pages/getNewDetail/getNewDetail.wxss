@@ -1,106 +1,53 @@
-.show {
-    display: block;
-}
-.hide {
-    display: none;
-}
-
-
-/* 输入分工信息 */
-.thank {
-    width: 100%;
-    color: #F37D1B;
-    font-size: 50rpx;
-    padding: 30rpx 160rpx;
-}
-.prompt {
-    font-size: 32rpx;
-    color:rgba(0,0,0,0.7);
-    padding-left: 20rpx;
-}
-.input-one {
-    display: block;
-    width: 100%;
-    padding-left: 20rpx;
-    clear:both;
-    position: relative;
-}
-.input-title {
-    display: inline-block;
-    width: 200rpx;
-    line-height: 90rpx;
-    text-align: right;
-    padding-right: 10rpx;
-}
-.input-content {
-    /* display: inline-block;
-    border-bottom: 1rpx solid #1AAD19; 
-    position:relative;
-    top: 10rpx; */
-    display: inline-block;
-    border-bottom: 1rpx solid #F37D1B; 
-    position:relative;
-    top: 12rpx;
-    width: calc(100% - 300rpx);
-}
-.half {
-    width: 200rpx;
-}
-.input-content-special {
-    display: inline-block;
-    width:calc(100% - 270rpx);
-    float:left;
-    line-height:30px;
-}
-.line-height {
-    line-height: 45px;
-}
-.input-sapn{
-  display: inline-block;
-  width:30rpx;
-}
-
-.submit-btn {
-    margin: 100rpx 200rpx;
-    background-color: #F37D1B;
-    color:#FFFFFF;
-}
-
 .screen {
     position: absolute;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
+    padding: 20rpx 40rpx 40rpx 40rpx;
 }
 
-.password-view {
-    width: 100%;
-    height: 100%;
-}
-.center {
-    position: absolute;
-    top: 20%;
-}
-.access-title {
-    font-size: 42rpx;
-    height: 56rpx;
-    line-height: 56rpx;
-    width: 100%;
-    padding: 30rpx 100rpx;
-}
-.password-input {
-    width: 75%;
-    height: 56rpx;
-    border-bottom: 2rpx solid #F37D1B;
-    padding: 10rpx 0;
-    margin: 10rpx 100rpx 30rpx 100rpx;
-} 
-.ver-btn {
-    margin: 50rpx 100rpx;
-    background-color: #F37D1B;
-    color:#FFFFFF;
-}
 .bold {
     font-weight: bold;
+    text-align: center;
+    height: 120rpx;
+    line-height: 120rpx;
+}
+
+.table {
+  border: 0px solid darkgray;
+  border-radius: 10rpx;
+}
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 100rpx;
+  align-items: center;
+}
+.td {
+  justify-content: center;
+  text-align: center;
+}
+.bg-tr{
+  background: snow;
+}
+.bg-td{
+  background: #E6F3F9;
+}
+.th {
+  justify-content: center;
+  background: #F37D1B;
+  color: #fff;
+  display: flex;
+  height: 100rpx;
+  align-items: center;
+}
+
+.submit-btn {
+  background-color: #F37D1B;
+  color:#FFFFFF;
+  font-size: 36rpx;
+  margin: 40rpx 0rpx;
+  cursor: pointer;
 }

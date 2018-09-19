@@ -3,10 +3,12 @@
         <view class="center">
             <view class="access-title">本页面仅供心栈日负责人访问</view>
             <input class="password-input" bindinput="inputPwd" password type="text" placeholder="请输入访问密码" />
-            <radio-group bindchange="iptPageChange">
-       <!-- <span class='title'>板块: </span> -->
-        <label style='margin-right: 10px' wx:for-items="{{ SubPages }}"><radio value="{{ item.value }}" checked='{{ pageSelected == item.value }}'/>{{ item.name }}　</label>
-      </radio-group>          
+            <radio-group bindchange="iptPageChange" class="select-radio">
+              <!-- <span class='title'>板块: </span> -->
+              <label wx:for-items="{{ SubPages }}">
+                <radio value="{{ item.value }}" checked='{{ pageSelected == item.value }}'/>{{ item.name }}　
+              </label>
+            </radio-group>          
             <button class="weui-btn ver-btn" bindtap="verfityPwd"> 进入</button>
         </view>
     </view>

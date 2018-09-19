@@ -5,9 +5,9 @@
     "pages/index/introduce/introduce",
     "pages/inputVolInfo/inputPwd",
     "pages/inputVolInfo/inputDetail/inputDetail",
+    "pages/getNewDetail/getNewDetail",
     "pages/customized/customized",
-    "pages/inputdata-ex/inputnevolunteer",
-    "pages/getNewDetail/getNewDetail"
+    "pages/inputdata-ex/inputnevolunteer"
   ],
   "window": {
     "backgroundTextStyle": "light",

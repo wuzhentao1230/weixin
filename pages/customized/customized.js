@@ -3,7 +3,6 @@ const util = require('../../utils/util.js')
 var birthDayObj = require("./birthday.js")
 Page({
   data: {
-
     form: {
       calendar: 0,
       gender: 0, 
@@ -17,6 +16,7 @@ Page({
     phoneValue:"",
     monthValue:"",
     dateValue:"",
+    dateValueDefault: '1990-01-01',
     index:[0,0],
     genderSelected: 0,
     calendarSelected: 0,
@@ -30,12 +30,11 @@ Page({
     ]
   },
   onLoad: function () {
-   
-   var defaultMonth = '4';
-      var days = birthDayObj.getDaysById(defaultMonth);
-      this.setData({
-        month: [birthDayObj.monthsList, days]
-      })
+    var defaultMonth = '4';
+    var days = birthDayObj.getDaysById(defaultMonth);
+    this.setData({
+      month: [birthDayObj.monthsList, days]
+    })
   },
   birthDayPickerBindChange: function (e) {
     var that = this;
@@ -86,7 +85,6 @@ Page({
       genderSelected: e.detail.value
     })
   },
- 
   iptValueChange: function (e) {
     var that = this;
     var fieldName = e.currentTarget.dataset['name'];
@@ -97,7 +95,6 @@ Page({
       [fieldName]: e.detail.value
     })
     //console.log('value is ',e.detail.value)
-    
   },
  
   mySubmit: function(e) {
@@ -144,8 +141,7 @@ Page({
         title: '请允许授权',
         content: '只获取用户公开信息如昵称、头像等',
       })
-    }
-      
+    } 
   },
   verify: function(e) {
     var isSuccess = false;
@@ -184,8 +180,6 @@ Page({
     else {
       isSuccess = true;
     }
-    
-
     return isSuccess; 
   },
   verifyphone:function(){

@@ -1,16 +1,40 @@
 <view class="screen">
-  <view class="bold">
-  新志愿者列表：
+  <view class="new-people-module">
+    <view class="bold">
+      新志愿者列表
+    </view>
+    <view wx:if="{{strNewDetailInfo.length==0}}">
+      <text>今日无新志愿者</text>
+    </view>
+    <view class="table" wx:else>
+      <view class="tr bg-tr">
+        <view class="th" style="width:20%">姓名</view>
+        <view class="th" style="width:40%">电话</view>
+        <view class="th" style="width:15%">性别</view>
+        <view class="th" style="width:25%">阳历生日</view>
+      </view>
+      <block wx:for="{{newPeopleDetail}}" wx:key="{{name}}">
+        <view class="tr bg-td" wx:if="{{index % 2 == 0}}">
+          <view class="td" style="width:20%">{{item.name}}</view>
+          <view class="td" style="width:40%">{{item.phone}}</view>
+          <view class="td" style="width:15%">{{item.gender}}</view>
+          <view class="td" style="width:20%">{{item.solar}}</view>
+        </view>
+        <view class="tr" wx:else>
+          <view class="td" style="width:20%">{{item.name}}</view>
+          <view class="td" style="width:40%">{{item.phone}}</view>
+          <view class="td" style="width:15%">{{item.gender}}</view>
+          <view class="td" style="width:20%">{{item.solar}}</view>
+        </view>
+      </block>
+    </view>
+    <button class="weui-btn submit-btn" bindtap="CopyNewPeopleInfo"> 复制新志愿者列表 </button>
   </view>
-  <view wx:for="{{strNewDetailInfo}}">
-      {{item}}
+  <view class="shouxing-module">
+    <view class="bold">
+      今日寿星名单
+    </view>
+    <text>{{shouxing_list_str}}</text>
+    <button class="weui-btn submit-btn" bindtap="CopyShouXingInfo"> 复制寿星名单 </button> 
   </view>
-  <view class="bold">
-  今日寿星名单：
-  </view>
-  <text>{{shouxing_list_str}}</text>
-  
-  <view>
-  <button class="weui-btn submit-btn" bindtap="CopyInfo"> 复制寿星名单 </button>
-  </view> 
 </view>

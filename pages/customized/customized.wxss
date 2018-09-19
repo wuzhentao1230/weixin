@@ -1,3 +1,6 @@
+.container {
+  font-size: 36rpx;
+}
 .log-list {
   display: flex;
   flex-direction: column;
@@ -8,10 +11,10 @@
 }
 .title{
   float:left;
-   height:30px; 
-   line-height:30px; 
-   margin-right:10px;
-   flex:1
+  height:30px; 
+  line-height:30px; 
+  margin-right:10px;
+  flex:1;
 }
 .input-style{
   border: 1px solid #eee; 
