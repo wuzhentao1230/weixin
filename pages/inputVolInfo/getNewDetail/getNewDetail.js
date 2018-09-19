@@ -1,5 +1,5 @@
 // pages/getNewDetail.js
-var config = require('../../config')
+var config = require('../../../config')
 var pageObject = {
 
   /**

@@ -7,7 +7,7 @@ var pageObject = {
         checkList: [],              // 获取当日志愿者名单列表请求response
         numPeople: 0,               // 总人数
         newPeople: "0人",           // 新人数
-        newPeopleDetail:[],         //新人详细信息
+        newPeopleDetail:[],         // 新人详细信息
         detailLog: [],              // 提交的奉粥日志文本，用于复制
 
         form: {
@@ -64,7 +64,7 @@ var pageObject = {
             },
             success: function (res) {
                 // res.data = ["辛开愚", "张军", "张婷", "康倩倩", "任蕾", "李信", "孙文正", "李新芹", "吴京昌", "丁赛", "刘建华", "夏淑", "周新", "杨晓东", "杨晓欣", "张亮", "卢漫漫", "林鹭"];
-                console.log("getDailyList ", res);
+                // console.log("当天签到志愿者列表 ", res);
                 if (res.statusCode == 200) {
                     var strlist = "";
                     if (res.data.length > 0) {
@@ -153,7 +153,7 @@ var pageObject = {
                 'content-type': 'application/json' // 默认值
             },
             success: function (res) {
-                console.log("getDayInfo ", res.data);
+                // console.log("当天志愿者名单：", res.data);
                 that.setData({
                     DayInfo:res.data
                 });
@@ -176,7 +176,7 @@ var pageObject = {
         var fieldName = e.currentTarget.dataset['name'];
 
         that.setData({
-            [fieldName]: e.detail.value
+            [fieldName]: e.detail.valuetest
         })
         // console.log('fieldName = ' + fieldName + ',e.detail.value = ' + e.detail.value);
     },

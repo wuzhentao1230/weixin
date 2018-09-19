@@ -1,0 +1,68 @@
+.show {
+    display: block;
+}
+.hide {
+    display: none;
+}
+
+
+/* 输入分工信息 */
+.thank {
+    width: 100%;
+    color: #F37D1B;
+    font-size: 50rpx;
+    padding: 30rpx 160rpx;
+}
+.prompt {
+    font-size: 32rpx;
+    color:rgba(0,0,0,0.7);
+    padding-left: 20rpx;
+}
+.input-one {
+    display: block;
+    width: 100%;
+    padding-left: 20rpx;
+    clear:both;
+    position: relative;
+}
+.input-title {
+    display: inline-block;
+    width: 200rpx;
+    line-height: 90rpx;
+    text-align: right;
+    padding-right: 10rpx;
+}
+.input-content {
+    /* display: inline-block;
+    border-bottom: 1rpx solid #1AAD19; 
+    position:relative;
+    top: 10rpx; */
+    display: inline-block;
+    border-bottom: 1rpx solid #F37D1B; 
+    position:relative;
+    top: 12rpx;
+    width: calc(100% - 300rpx);
+}
+.half {
+    width: 200rpx;
+}
+.input-content-special {
+    display: inline-block;
+    width:calc(100% - 270rpx);
+    float:left;
+    line-height:30px;
+}
+.line-height {
+    line-height: 45px;
+}
+.input-sapn{
+  display: inline-block;
+  width:30rpx;
+}
+
+.submit-btn {
+    margin: 100rpx 200rpx;
+    background-color: #F37D1B;
+    color:#FFFFFF;
+}
+
