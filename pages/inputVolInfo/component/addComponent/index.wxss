@@ -1,0 +1,44 @@
+/* components/my-component.wxss */
+.vol-input {
+  font-size: 38rpx;
+  color:rgb(37, 37, 37);
+  padding: 6rpx 28rpx;
+  border-bottom: 1px solid #ebe9e9;
+}
+.name {
+  display: inline-block;
+  width: 180rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  color:#686868;
+  font-size: 32rpx;
+  text-align: right;
+  padding-right: 10rpx;
+}
+.text {
+  font-size: 32rpx;
+}
+
+/* 弹出框样式 */
+.popup-content {
+  width: 100%;
+  padding: 20rpx 30rpx;
+  text-align: center;
+  background: #FFFFFF;
+  height: 600rpx;
+  border-top-left-radius: 30rpx;
+  border-top-right-radius: 30rpx;
+}
+.max-select-num {
+  padding-bottom: 16rpx;
+  border-bottom: 1px solid #c9c9c9;
+  font-size: 32rpx;
+  color: #acacac;
+}
+.add-input {
+  margin: 60rpx 100rpx 80rpx 100rpx;
+}
+.error {
+  color: #afafaf;
+  font-size: 30rpx;
+}

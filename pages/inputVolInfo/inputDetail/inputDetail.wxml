@@ -67,7 +67,7 @@
         </view> 
         <button class="weui-btn submit-btn" bindtap="submitInfo"> 提交 </button>
     </view>
-    <view class="{{showCopy==true?'show':'hide'}}">
+    <view class="{{showCopy==true?'show copy-class':'hide'}}">
         <view wx:for="{{detailLog}}">
             {{item}}
         </view>

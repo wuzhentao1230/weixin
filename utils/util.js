@@ -24,7 +24,23 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+const stringToArray = str => {
+  console.log(str)
+}
+
+const arraySub = (parArr,childArr) => {
+  var result = [];
+  parArr.forEach((item, index) => {
+    if(childArr.indexOf(item) < 0) {
+      result.push(item);
+    }
+  })
+  return result;
+}
+
 module.exports = {
   formatTime: formatTime,
-  formatDate: formatDate
+  formatDate: formatDate,
+  stringToArray: stringToArray,
+  arraySub: arraySub
 }

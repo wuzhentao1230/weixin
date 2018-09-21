@@ -1,76 +1,75 @@
 <view class="screen">
-    <view class="input-view {{showInput==true?'show':'hide'}}">
-        <view class="thank">感恩您的承担与付出!</view>
-        <view class="prompt">【多个人姓名之间以空格分开】</view>
-         <view class="input-contain">
-            <view class="input-one">
-                <view class="input-title">日负责人：</view>
-                <input class="input-content" id="dailyLeader" auto-focus placeholder=""  bindchange="iptValueChange" data-name="form.dailyLeader" value='{{DayInfo.dailyLeader}}'></input>
-            </view>
-            <view class="input-one">
-                <view class="input-title">熬粥：</view>
-                <input class="input-content" placeholder="" bindchange="iptValueChange" data-name="form.cooker" value='{{DayInfo.cooker}}'/>
-            </view>
-            <view class="input-one">
-                <view class="input-title">签到引领：</view>
-                <input class="input-content" placeholder="" bindchange="iptValueChange" data-name="form.checker" value='{{DayInfo.checker}}'/>
-            </view>
-            <view class="input-one">
-                <view class="input-title">前行：</view>
-                <input class="input-content" placeholder="" bindchange="iptValueChange" data-name="form.forwarder" value='{{DayInfo.forwarder}}'/>
-            </view>
-            <view class="input-one">
-                <view class="input-title">总杯数：</view>
-                <input class="input-content half" type="number" placeholder="" bindchange="iptValueChange" data-name="form.totalcups" value='{{DayInfo.totalcups}}'/>
-                <view class="input-sapn">杯</view>
-            </view>
-            <view class="input-one">
-                <view class="input-title" style='float:left;'>总人数：</view>
-                <view class="input-content-special line-height">{{numPeople}} 人</view>
-            </view>
-            <view class="input-one">
-                <view class="input-title" style='float:left;'>新人数：</view>
-                <view class="input-content-special">{{newPeople}} </view>
-            </view>
-            <view class="input-one">
-                <view class="input-title" style='float:left;'>摄影：</view>
-                <input class="input-content" placeholder="" bindchange="iptValueChange" data-name="form.photographer" value='{{DayInfo.photographer}}'/>
-            </view>
-            <view class="input-one">
-                <view class="input-title">日志：</view>
-                <input class="input-content" placeholder="" bindchange="iptValueChange" data-name="form.dailylog" value='{{DayInfo.dailylog}}'/>
-            </view>
-            <view class="input-one">
-                <view class="input-title">文宣：</view>
-                <input class="input-content" placeholder="" bindchange="iptValueChange" data-name="form.propaganda" value='{{DayInfo.propaganda}}'/>
-            </view>
-            <view class="input-one">
-                <view class="input-title">结行：</view>
-                <input class="input-content" placeholder="" bindchange="iptValueChange" data-name="form.summingup" value='{{DayInfo.summingup}}'/>
-            </view>
-            <view class="input-one">
-                <view class="input-title">后勤：</view>
-                <input class="input-content" placeholder="" bindchange="iptValueChange" data-name="form.logistics" value='{{DayInfo.logistics}}'/>
-            </view>
-            <view class="input-one">
-                <view class="input-title">粥车粥桶：</view>
-                <input class="input-content" placeholder="" bindchange="iptValueChange" data-name="form.cleaner" value='{{DayInfo.cleaner}}'/>
-            </view>
-              <view class="input-one">
-                <view class="input-title">环保：</view>
-                <input class="input-content" placeholder="" bindchange="iptValueChange" data-name="form.environment" value='{{DayInfo.environment}}'/>
-            </view>
-            <view class="input-one">
-                <view class="input-title" style='float:left;'>当日签到：</view>
-                <view class='input-content-special'>{{strList}}</view>
-            </view>
-        </view> 
-        <button class="weui-btn submit-btn" bindtap="submitInfo"> 提交 </button>
+  <view class="input-view {{showInput==true?'show':'hide'}}">
+    <wxc-notice scroll="{{true}}" close="{{true}}" bg-color="#55CA28" bg-rgba="rgba(255, 147, 0, 0)" show-icon="{{true}}" notice="{{notice}}"></wxc-notice>
+    <view class="thank">感恩您的承担与付出!</view>
+    <add-component title="今日签到" vol-list="{{volListArr}}" bind:addVolEvent="addVolEvent">
+    </add-component>
+    <vol-input-component 
+      title="日负责人" placeholder="请选择日负责人" 
+      vol-list="{{volListArr}}" default-val="{{dayInfo.dailyLeader}}" max-select="3"
+      data-name="dayInfo.dailyLeader" bind:selectEvent="selectEvent">
+    </vol-input-component>
+    <vol-input-component 
+      title="煮粥侠" placeholder="请选择煮粥侠" 
+      vol-list="{{volListArr}}" default-val="{{dayInfo.cooker}}" max-select="5" 
+      data-name="dayInfo.cooker" bind:selectEvent="selectEvent">
+    </vol-input-component>
+    <vol-input-component 
+      title="签到引领" placeholder="请选择签到引领" 
+      vol-list="{{volListArr}}" default-val="{{dayInfo.checker}}" max-select="2" 
+      data-name="dayInfo.checker" bind:selectEvent="selectEvent">
+    </vol-input-component>
+    <vol-input-component 
+      title="前行" placeholder="请选择前行" 
+      vol-list="{{volListArr}}" default-val="{{dayInfo.forwarder}}" max-select="2" 
+      data-name="dayInfo.forwarder" bind:selectEvent="selectEvent">
+    </vol-input-component>
+    <input-component 
+      title="总杯数" default-val="{{dayInfo.totalcups}}" 
+      data-name="dayInfo.totalcups" bind:inputEvent="selectEvent">
+    </input-component>
+    <delete-component 
+      title="新人" default-val="{{dayInfo.newPeople}}" 
+      data-name="dayInfo.newPeople" bind:delVolEvent="selectEvent">
+    </delete-component>
+    <vol-input-component 
+      title="摄影" placeholder="请选择摄影" 
+      vol-list="{{volListArr}}" default-val="{{dayInfo.photographer}}" max-select="3" 
+      data-name="dayInfo.photographer" bind:selectEvent="selectEvent">
+    </vol-input-component>
+    <vol-input-component 
+      title="日志" placeholder="请选择日志" 
+      vol-list="{{volListArr}}" default-val="{{dayInfo.dailylog}}" max-select="5" 
+      data-name="dayInfo.dailylog" bind:selectEvent="selectEvent">
+    </vol-input-component>
+    <vol-input-component 
+      title="文宣" placeholder="请选择文宣" 
+      vol-list="{{volListArr}}" default-val="{{dayInfo.propaganda}}" max-select="2" 
+      data-name="dayInfo.propaganda" bind:selectEvent="selectEvent">
+    </vol-input-component>
+    <vol-input-component 
+      title="结行" placeholder="请选择结行" 
+      vol-list="{{volListArr}}" default-val="{{dayInfo.summingup}}" max-select="2" 
+      data-name="dayInfo.summingup" bind:selectEvent="selectEvent">
+    </vol-input-component>
+    <vol-input-component 
+      title="后勤" placeholder="请选择后勤" 
+      vol-list="{{volListArr}}" default-val="{{dayInfo.logistics}}" max-select="5" 
+      data-name="dayInfo.logistics" bind:selectEvent="selectEvent">
+    </vol-input-component>
+    <vol-input-component 
+      title="粥车粥桶" placeholder="请选择粥车粥桶" 
+      vol-list="{{volListArr}}" default-val="{{dayInfo.cleaner}}" max-select="3" 
+      data-name="dayInfo.cleaner" bind:selectEvent="selectEvent">
+    </vol-input-component>
+    <vol-input-component title="环保" placeholder="请选择环保人员" vol-list="{{volListArr}}" default-val="{{dayInfo.environment}}" max-select="20" data-name="dayInfo.environment" bind:selectEvent="selectEnvSignEvent"></vol-input-component>
+    <vol-input-component title="奉粥" placeholder="请选择奉粥人员" vol-list="{{volListArr}}" default-val="{{dayInfo.signnamelist}}" max-select="30" data-name="dayInfo.signnamelist" bind:selectEvent="selectEnvSignEvent"></vol-input-component>
+    <button class="weui-btn submit-btn" bindtap="submitInfo"> 提交 </button>
+  </view>
+  <view class="{{showCopy==true?'show copy-class':'hide'}}">
+    <view wx:for="{{detailLog}}" wx:key="{{item}}">
+      {{item}}
     </view>
-    <view class="{{showCopy==true?'show':'hide'}}">
-        <view wx:for="{{detailLog}}">
-            {{item}}
-        </view>
-        <button class="weui-btn submit-btn" bindtap="CopyInfo"> 一键复制 </button>
-    </view>
+    <button class="weui-btn submit-btn" bindtap="CopyInfo"> 一键复制 </button>
+  </view>
 </view>

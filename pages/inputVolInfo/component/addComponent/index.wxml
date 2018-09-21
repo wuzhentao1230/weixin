@@ -1,0 +1,25 @@
+<!-- 这是自定义组件的内部WXML结构 -->
+<view class="vol-input">
+  <text class="name">{{title}}：</text>
+  <text class="text">{{volList}}</text>
+  <wxc-button 
+    size="small" type="selection" value="新增" plain="true" 
+    btn-style="border-radius:8rpx;margin-left:10rpx;margin-bottom:10rpx;" 
+    bindclick="popupShowEvent">
+  </wxc-button>
+  <wxc-popup class="J_Popup" animation-mode="bottom" align="bottom" locked="true">
+    <view class="popup-content">
+      <view class="select-title">请输入新增志愿者名称</view>
+      <view class="max-select-num">(新增虽好，不要贪多哦)</view>
+      <view class="add-input">
+        <wxc-input type="text" value="{{newVol}}" icon="add" bind:input="inputNewVol" placeholder="请输入新增志愿者名字"></wxc-input>
+        <text wx:show="{{errorFlag}}" class="error">输入姓名不能有空格且在2-5个汉字之间</text>
+      </view>
+      <wxc-button 
+        size="large" type="selection" value="确定" 
+        btn-style="border-radius:8rpx;" bindclick="submitAddEvent">
+      </wxc-button>
+    </view>
+  </wxc-popup>
+</view>
+<slot></slot>

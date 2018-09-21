@@ -5,8 +5,8 @@
     "pages/index/introduce/introduce",
     "pages/inputVolInfo/inputPwd",
     "pages/inputVolInfo/inputDetail/inputDetail",
-    "pages/inputVolInfo/inputDetailNew/inputDetailNew",
     "pages/inputVolInfo/getNewDetail/getNewDetail",
+    "pages/inputVolInfo/inputDetailNew/inputDetailNew",
     "pages/customized/customized",
     "pages/inputdata-ex/inputnevolunteer"
   ],

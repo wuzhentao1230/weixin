@@ -61,8 +61,11 @@
 }
 
 .submit-btn {
-    margin: 100rpx 200rpx;
+    margin: 60rpx 80rpx;
     background-color: #F37D1B;
     color:#FFFFFF;
 }
 
+.copy-class {
+  padding: 40rpx;
+}

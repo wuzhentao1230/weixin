@@ -4,7 +4,7 @@ var pageObject = {
         xxxPwd: '',
         pageSelected:0,
         SubPages: [
-          { name: "奉粥日志", value: 0, suburl:"./inputDetail/inputDetail" },
+          { name: "奉粥日志", value: 0, suburl:"./inputDetailNew/inputDetailNew" },
           { name: "志愿者列表", value: 1,suburl:"./getNewDetail/getNewDetail" }
         ],
     },

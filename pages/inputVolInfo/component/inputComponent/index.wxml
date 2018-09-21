@@ -1,0 +1,9 @@
+<!-- 这是自定义组件的内部WXML结构 -->
+<view class="vol-input">
+  <text class="name">{{title}}：</text>
+  <view class="input">
+    <wxc-input type="text" value="{{defaultVal}}" bind:input="inputEvent" ></wxc-input>
+  </view>
+  <text class="text">杯</text>
+</view>
+<slot></slot>

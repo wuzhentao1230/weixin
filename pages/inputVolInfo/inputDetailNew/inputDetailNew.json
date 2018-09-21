@@ -2,5 +2,13 @@
   "navigationBarBackgroundColor": "#F37D1B",
   "navigationBarTextStyle": "#000",
   "navigationBarTitleText": "请输入奉粥日志",
-  "backgroundColor": "#493164"
+  "backgroundColor": "#493164",
+  "usingComponents": {
+    "wxc-button": "../../../dist/packages/@minui/wxc-button/dist/index",
+    "wxc-notice": "../../../dist/packages/@minui/wxc-notice/dist/index",
+    "vol-input-component": "../component/volInputComponent/index",
+    "add-component": "../component/addComponent/index",
+    "delete-component": "../component/deleteComponent/index",
+    "input-component": "../component/inputComponent/index"
+  }
 }

@@ -1,0 +1,24 @@
+<!-- 这是自定义组件的内部WXML结构 -->
+<view class="vol-input">
+  <text class="name">{{title}}：</text>
+  <block wx:if="{{defaultVal.length>0}}">
+    <text class="text">{{defaultVal}}</text>
+    <wxc-button size="small" type="selection" plain="true" value="更改" btn-style="border-radius:8rpx;margin-left:10rpx;margin-bottom:10rpx;" bindclick="popupShowEvent"></wxc-button>
+  </block>
+  <block wx:else>
+    <wxc-button size="small" type="selection" value="{{placeholder}}" btn-style="border-radius:8rpx;margin-bottom:10rpx;" bindclick="popupShowEvent"></wxc-button>
+  </block>
+  <wxc-popup class="J_Popup" animation-mode="bottom" align="bottom" locked="true">
+    <view class="popup-content">
+      <view class="select-title">请选择承担 <text>{{title}}</text> 志愿者</view>
+      <view class="max-select-num">({{title }}最多选择 <text>{{maxSelect}}</text> 个)</view>
+      <checkbox-group class="checkbox-group" bindchange="checkboxChange">
+        <label class="checkbox" wx:for="{{volDataList}}" wx:key="{{item.name}}">
+          <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.name}}
+        </label>
+      </checkbox-group>
+      <wxc-button size="large" type="selection" value="确定" btn-style="border-radius:8rpx;" bindclick="selectVolEvent"></wxc-button>
+    </view>
+  </wxc-popup>
+</view>
+<slot></slot>
