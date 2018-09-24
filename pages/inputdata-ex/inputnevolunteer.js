@@ -53,7 +53,7 @@ Page({
       })
       var myApp = getApp();
       myApp.globalData.userInfo = that.data.userinfo;
-      // console.log("global userinfo", myApp.globalData.userInfo)
+       console.log("global userinfo", myApp.globalData.userInfo)
       if (this.verify(e)) {
         this.apply();
       }
@@ -104,8 +104,8 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       success: function (res) {
-        console.log("code", res);
-        if (res.data.code == 0) {
+        //console.log("code", res.data);
+        if (res.data.Signcode == 0) {
           wx.showToast({
             title: '签到成功',
             duration: 1500
@@ -128,7 +128,7 @@ Page({
           // setTimeout(function () { wx.hideToast() }, 2000)
           wx.showModal({
             title: '签到失败',
-            content: res.data.message,
+            content: res.data.SignMessage,
           })
           that.setData({
             form: {
@@ -136,6 +136,7 @@ Page({
             nameValue: "",
             phoneValue: ""
           })
+           setTimeout(function () { wx.hideToast() }, 2000)
         }
       }
     })
