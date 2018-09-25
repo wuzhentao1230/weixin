@@ -24,7 +24,7 @@
       <view style='position: relative;'>
         <span class='title'>生　　日: </span>
           <picker mode="date" value="{{dateValueDefault}}" bindchange='datePickerBindChange' data-name="form.birthDate" start='1900-1-1' end='2900-1-1'> 
-            <input placeholder="请选择出生日期" style='border: 2px solid #eee; border-radius: 5px; padding: 5px; margin-bottom: 10px'  value="{{dateValue}}" />
+            <input placeholder="请选择出生日期" style='border: 2px solid #eee; border-radius: 5px; padding: 5px; margin-bottom: 10px'  value="{{dateValue}}" disabled='true'  />
           </picker> 
           <!-- <picker mode='multiSelector' style="height:45px;" bindchange='birthDayPickerBindChange' bindcolumnchange='birthDayPickerColumnBindChange' value='{{index}}' range='{{month}}'  range-key='name' data-name="form.birthDate">  
              <input placeholder="请选择生日" class='input-style' value="{{monthValue}}" disabled='true'>{{month[0][index[0]].name}}{{month[1][index[1]].name}}</input>  
