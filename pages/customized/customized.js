@@ -1,6 +1,7 @@
 //logs.js
 const util = require('../../utils/util.js')
 var birthDayObj = require("./birthday.js")
+const myApp = getApp()
 Page({
   data: {
     form: {
@@ -27,7 +28,8 @@ Page({
     calendars: [
       { name: "阳历", value: 0 },
       { name: "阴历", value: 1 }
-    ]
+    ],
+    canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   onLoad: function () {
     var defaultMonth = '4';
@@ -35,6 +37,44 @@ Page({
     this.setData({
       month: [birthDayObj.monthsList, days]
     })
+    if(myApp.globalData.userInfo)
+    {
+      this.setData({
+        userinfo: {
+          nickName: myApp.globalData.userInfo.nickName,
+          avatarUrl: myApp.globalData.userInfo.avatarUrl,
+          province: myApp.globalData.userInfo.province
+        }
+      })
+    }
+    else if(this.data.canIUse){
+      myApp.userInfoReadyCallback = res=> {
+        myApp.globalData.userInfo = res.userInfo;
+        this.setData({
+          userinfo: {
+            nickName: res.userInfo.nickName,
+            avatarUrl: res.userInfo.avatarUrl,
+            province: res.userInfo.province
+          }
+        })
+      }
+    }
+    else
+    {
+      wx.getUserInfo({
+        success:res => {
+          myApp.globalData.userInfo = res.userInfo;
+          this.setData({
+            userinfo: {
+              nickName: res.userInfo.nickName,
+              avatarUrl: res.userInfo.avatarUrl,
+              province: res.userInfo.province
+            }
+          })
+        }
+      })
+    }
+
   },
   birthDayPickerBindChange: function (e) {
     var that = this;
@@ -98,7 +138,6 @@ Page({
   },
  
   mySubmit: function(e) {
-    var myApp = getApp();
     var that = this;
     if (e.detail.userInfo || myApp.globalData.userInfo ) {
       let res
