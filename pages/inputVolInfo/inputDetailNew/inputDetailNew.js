@@ -284,7 +284,7 @@ var pageObject = {
     var date = new Date();
     var mydate = date.getFullYear() + "年" + (date.getMonth() + 1) + "月" + date.getDate() + "日";
     var item = "仁爱魏公村心栈" + mydate + "奉粥日志";
-    strlist.push(item);
+    //strlist.push(item);
     var weekday = new Array(7);
     weekday = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"];
 
