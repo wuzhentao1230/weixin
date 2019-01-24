@@ -1,6 +1,10 @@
 {
-  "navigationBarBackgroundColor": "#493164",
+  "navigationBarBackgroundColor": "#F37D1B",
   "navigationBarTextStyle": "#000",
-  "navigationBarTitleText": "志愿者活动签到",
-  "backgroundColor": "#493164"
+  "navigationBarTitleText": "我的仁爱路",
+  "backgroundColor": "#493164",
+  "usingComponents": {
+    "wux-cell-group": "../../dist/cell-group/index",
+    "wux-cell": "../../dist/cell/index"
+  }
 }

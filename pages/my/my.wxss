@@ -1,8 +1,44 @@
-/* pages/my/my.wxss */
-.title{
-  float:left;
-   height:30px; 
-   line-height:30px; 
-   margin-right:10px;
-   flex:1
+/**index.wxss**/
+.my-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #eeeeee;
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.intro {
+  width: 100%;
+  height: 220rpx;
+  background-color: #ffffff;
+  position: relative;
+}
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin-top: 46rpx;
+  border-radius: 50%;
+  position: absolute;
+  right: 46rpx;
+}
+.name {
+  position: absolute;
+  left: 46rpx;
+  margin-top: 46rpx;
+  width: 70%;
+}
+.userinfo-nickname {
+  font-size: 40rpx;
+}
+.userinfo-tag {
+  font-size: 26rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  color: #8a8888;
 }

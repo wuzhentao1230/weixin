@@ -1,8 +1,35 @@
-<!--pages/my/my.wxml-->
-<view >
-<image src="{{avatarUrl}}" style="width:50px;height:50px;" mode='aspectFill'>个人头像</image>
-<label class='.title'>{{nickName}}</label>
-</view>
-<view >
+<view class="my-container">
+  <view wx:if="{{!hasUserInfo && canIUse}}" class="userinfo">
+    <button open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称       </button>
+  </view>
+  <view wx:else>
+    <view class="intro">
+      <view class="name">
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+        <text class="userinfo-tag">
+          仁爱心栈志愿者、文宣、日负责人、栈长、副部长、部长
+        </text>
+      </view>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+    </view>
+    <view class="feature">
+      <wux-cell-group title="权限授权与回收">
+        <wux-cell title="授权" is-link url="/pages/index/index" open-type="switchTab"></wux-cell>
+        <wux-cell title="回收" is-link url="/pages/index/index" open-type="switchTab"></wux-cell>
+      </wux-cell-group>
+      <wux-cell-group title="信息填报与查询">
+        <wux-cell title="奉粥信息填报" is-link url="/pages/index/index" open-type="switchTab"></wux-cell>
+        <wux-cell title="奉粥信息查询" is-link url="/pages/index/index" open-type="switchTab"></wux-cell>
+      </wux-cell-group>
+      <wux-cell-group title="活动">
+        <wux-cell title="发起活动" is-link url="/pages/index/index" open-type="switchTab"></wux-cell>
+        <wux-cell title="历史活动查询" is-link url="/pages/index/index" open-type="switchTab"></wux-cell>
+      </wux-cell-group>
+      <wux-cell-group title="我的">
+        <wux-cell title="奉粥记录查询" is-link url="/pages/index/index" open-type="switchTab"></wux-cell>
+        <wux-cell title="意见反馈" is-link url="/pages/index/index" open-type="switchTab"></wux-cell>
+      </wux-cell-group>
+    </view>
+  </view>
 
 </view>
