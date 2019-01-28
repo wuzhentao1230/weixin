@@ -19,10 +19,10 @@ Page({
         background: ['https://upload-images.jianshu.io/upload_images/9674600-1e1089e3e41928ee.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/700', 'https://upload-images.jianshu.io/upload_images/9674600-fa38b46182f961f3.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/700', 'https://upload-images.jianshu.io/upload_images/9674600-6254921ee5b54d77.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/700'],
         
         // logo部分 
-        modeFound:'widthFix',
-        src_found: './img/foundation_logo.png',
-        modewgc: 'widthFix',
-        src_wgc: './img/xinzhan_logo.jpg',
+        // modeFound:'widthFix',
+        // src_found: './img/foundation_logo.png',
+        // modewgc: 'widthFix',
+        // src_wgc: './img/xinzhan_logo.jpg',
 
         nickName: "",
         avatarUrl: "",
@@ -39,7 +39,7 @@ Page({
 
         // 底部欢迎接入志愿者
         mode: 'widthFix',
-        src: './img/volunteer.png',
+        src: './img/yijiaren.png',
     },
 
     /**

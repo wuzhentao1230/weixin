@@ -1,4 +1,6 @@
 <view class="screen">
+    <image mode="widthFix" src="./imgs/denglong.png" class="index_denglong"></image>
+    <image mode="widthFix" src="https://upload-images.jianshu.io/upload_images/9674600-0d4ddcb5e163de81.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp" class="index_footer"></image>
     <view class="password-view" id="password-view">
         <view class="center">
             <view class="access-title">本页面仅供心栈日负责人访问</view>

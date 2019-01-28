@@ -34,6 +34,20 @@
 }
 .ver-btn {
     margin: 50rpx 100rpx;
-    background-color: #F37D1B;
+    background-color: #e20000;
     color:#FFFFFF;
+}
+
+
+.index_denglong {
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    z-index: 99;
+}
+.index_footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
 }

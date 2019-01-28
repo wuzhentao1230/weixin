@@ -1,27 +1,26 @@
 <!--pages/checkin/checkin.wxml-->
-<view class="container" style='padding: 15px;'>
-
+<view class="container">
+  <image src="../../images/newyear/index_header.png" mode="widthFix" class="image_header"></image>
   <view style='background: white; border-radius: 5px; width: 100%'>
-    <view style='text-align: center; padding: 40px 0px 20px 0px; font-size: 24px;'>
+    <view class="checkin_title">
       <span>志愿者签到</span>
     </view>
-    <view style='padding: 10px 30px'>
+    <view class="checkin_content">
       <view style='position: relative;'>
         <span class='title'>人员列表:</span>
       </view>
-        <view class="weui-cells weui-cells_after-title">
-          <checkbox-group bindchange="checkboxChange">
-              <label class="weui-cell weui-check__label" wx:for="{{checkboxItems}}" wx:key="value">
-                  <checkbox  value="{{item.value}}" checked="{{item.checked}}"/>
-
-                  <view class="weui-cell__hd weui-check__hd_in-checkbox">
-                  </view>
-                  <view class="weui-cell__bd">{{item.name}}</view>
-              </label>
-          </checkbox-group>
-        </view>
+      <view class="weui-cells weui-cells_after-title">
+        <checkbox-group bindchange="checkboxChange">
+          <label class="weui-cell weui-check__label" wx:for="{{checkboxItems}}" wx:key="value">
+            <checkbox  value="{{item.value}}" checked="{{item.checked}}"/>
+            <view class="weui-cell__hd weui-check__hd_in-checkbox">
+            </view>
+            <view class="weui-cell__bd">{{item.name}}</view>
+          </label>
+        </checkbox-group>
+      </view>
       <view style='position: relative;'>
-        <span class='title' style="color:red">已签到人员:</span>
+        <span class='title' style="color:#e20000">已签到人员:</span>
       </view>
       <view class="weui-cell weui-check__label">{{checkedPersons}}</view>
       <span class="weui-cell weui-check__label"></span>
@@ -30,14 +29,15 @@
       <label class='title'>签到日期:  {{curtime}}</label>
       </view>
     </view>
-    <view style='padding: 10px 30px 30px 30px; text-align: center'>
-      <view style='background: #d02020; border-radius: 100px; width: 100%; margin: 0 auto; text-align: center; color: white; padding: 10px 0px;' bindtap='userCheckIn'>签到</view>
+    <view class="checkin_btn">
+      <view class="btn" bindtap='userCheckIn'>签到</view>
     </view>
     <view class="page__desc">
-    <navigator url='../customized/customized' style='padding:10px 30px;color:blue;text-decoration: underline;font-family: "黑体";'>我是新志愿者,点击这里录入!</navigator>
+      <navigator url='../customized/customized'  class="question">我是新志愿者,点击这里录入!</navigator>
     </view>
     <view class="page__desc">
-      <navigator url='../inputdata-ex/inputnevolunteer' style='padding:10px 30px;color:blue;text-decoration: underline;font-family: "黑体";' >我是老志愿者，没有查到信息?</navigator>
+      <navigator url='../inputdata-ex/inputnevolunteer' class="question">我是老志愿者，没有查到信息?</navigator>
     </view>
-  </view>
+  </view> 
+  <image src="../../images/newyear/index_footer.png" mode="widthFix" class="image_footer"></image>
 </view>

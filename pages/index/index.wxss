@@ -16,7 +16,7 @@ page {
 }
 .page-section-spacing {
     box-sizing:border-box;
-    margin:20rpx 40rpx 0 40rpx;
+    margin: 50rpx 70rpx 0 70rpx;
 }
 swiper {
     width: 100%;
@@ -44,9 +44,9 @@ image {
 .wgc-introduce {
     background: #ffffff; 
     border-radius: 10px; 
-    margin: 0 30rpx 30rpx 30rpx;
-    padding: 20rpx;
-    opacity:0.8;
+    margin: 0rpx 50rpx 50rpx 50rpx;
+    padding: 30rpx;
+    opacity: 0.8;
 }
 .title-color {
     color: #000000;
@@ -71,8 +71,9 @@ image {
 .shouxing_module {
     background: #ffffff; 
     border-radius: 10px; 
-    margin: 30rpx;
-    padding: 20rpx; 
+    margin: 50rpx;
+    margin-bottom: 100rpx;
+    padding: 30rpx; 
     opacity: 0.8;
 }
 .shouxing_title {
@@ -94,19 +95,42 @@ image {
 }
 
 
-.welcome {
+.index_header {
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    z-index: 99;
+}
+.index_left {
+    width: 40rpx;
+    position: fixed;
+    top: 260rpx;
+    left: 0px;
+}
+.index_right {
+    width: 40rpx;
+    position: fixed;
+    bottom: 160rpx;
+    right: 0px;
+}
+.index_footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    z-index: 99;
+}
+
+
+/* .welcome {
     width: 100%;
     position:fixed;
     bottom:0;
-}
-
+} */
 /* 
-
 .title-color {
   color: #14afc8;
   font-size: 17px;
 }
-
 .xinzhan_logo {
   width: 150rpx;
   height: 150rpx;

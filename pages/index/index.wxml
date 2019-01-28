@@ -1,5 +1,9 @@
 <!--pages/index/index.wxml-->
 <view >
+    <image class="welcome" mode="widthFix" src="./img/index_header.png" class="index_header"></image>
+    <image class="welcome" mode="widthFix" src="./img/index_left.png" class="index_left"></image>
+    <image class="welcome" mode="widthFix" src="./img/index_right.png" class="index_right"></image>
+    <image class="welcome" mode="widthFix" src="./img/index_footer.png" class="index_footer"></image>
     <!-- 增加swiper，但是因为swiper不能读取本地图片，等找到解决方案再上 -->
     <view class="page-section page-section-spacing swiper">
         <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}">
@@ -12,7 +16,7 @@
     </view>  
 
     <!-- 心栈简介卡片部分 -->
-     <view class="wgc-introduce">
+    <view class="wgc-introduce">
         <text class='xinzhan_des title-color'>魏公村心栈简介:</text>
         <view class='xinzhan_des text-color'>
             仁爱心栈魏公村栈启动于2014年11月1日第二个重阳节，是北京市仁爱慈善基金会仁爱心栈项目北京第7家全国第13家心栈，心栈启动的目的是为公众搭建一个善行实践的平台，通过... <span class="more" bindtap="lookMore">点击查看更多>></span>

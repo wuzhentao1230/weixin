@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/checkin/checkin",
     "pages/index/index",
+    "pages/checkin/checkin",
     "pages/index/introduce/introduce",
     "pages/inputVolInfo/inputPwd",
     "pages/inputVolInfo/inputDetail/inputDetail",
@@ -22,19 +22,19 @@
     "borderStyle": "white",
     "list": [
       {
-        "selectedIconPath": "images/index/index-selected.png",
+        "selectedIconPath": "images/index/year.png",
         "iconPath": "images/index/index.png",
         "pagePath": "pages/index/index",
         "text": "首页"
       },
       {
-        "selectedIconPath": "images/index/check-selected.png",
+        "selectedIconPath": "images/index/year.png",
         "iconPath": "images/index/check.png",
         "pagePath": "pages/checkin/checkin",
         "text": "签到"
       },
       {
-        "selectedIconPath": "images/index/dailylog-selected.png",
+        "selectedIconPath": "images/index/year.png",
         "iconPath": "images/index/dailylog.png",
         "pagePath": "pages/inputVolInfo/inputPwd",
         "text": "奉粥日志"
