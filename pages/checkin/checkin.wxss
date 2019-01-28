@@ -17,5 +17,5 @@ weui-cells{position:relative;margin-top:1.17647059em;background-color:#fff;line-
   background:#aaa;
 }
 page {
-  background: url(http://obxr1bykb.bkt.clouddn.com/customized_bg1.jpg) no-repeat #eee; height: 100%
+  /* background: url(http://obxr1bykb.bkt.clouddn.com/customized_bg1.jpg) no-repeat #eee; height: 100% */
 }

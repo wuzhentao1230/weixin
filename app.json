@@ -1,8 +1,7 @@
 {
   "pages": [
-    "pages/my/my",
-    "pages/index/index",
     "pages/checkin/checkin",
+    "pages/index/index",
     "pages/index/introduce/introduce",
     "pages/inputVolInfo/inputPwd",
     "pages/inputVolInfo/inputDetail/inputDetail",
@@ -39,12 +38,6 @@
         "iconPath": "images/index/dailylog.png",
         "pagePath": "pages/inputVolInfo/inputPwd",
         "text": "奉粥日志"
-      },
-      {
-        "selectedIconPath": "images/index/my-selected.png",
-        "iconPath": "images/index/my.png",
-        "pagePath": "pages/my/my",
-        "text": "我的"
       }
     ]
   }
