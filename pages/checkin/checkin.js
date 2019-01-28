@@ -73,15 +73,21 @@ Page({
       header: {
         'content-type': 'application/x-www-form-urlencoded' // 默认值
       },
-     
       success: function (res) {
         //console.log("code", res);
         if (res.data.code == 0) {
-          wx.showToast({
+          // wx.showToast({
+          //   title: '批量签到成功',
+          //   duration: 1500
+          // })
+          // setTimeout(function () { wx.hideToast() }, 2000)
+          wx.showModal({
             title: '批量签到成功',
-            duration: 1500
+            content: '感恩您的坚守与付出，祝您新春吉祥，阖家欢乐！',
+            confirmText: '收下了',
+            confirmColor: '#e20000',
+            showCancel: false
           })
-          setTimeout(function () { wx.hideToast() }, 2000)
           that.setData({
             form: {}
           })
